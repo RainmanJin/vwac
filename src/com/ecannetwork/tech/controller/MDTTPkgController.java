@@ -439,6 +439,7 @@ public class MDTTPkgController {
 			@RequestParam(value = "proType", required = false) String proType,
 			@RequestParam(value = "status", required = false) String status,
 			@RequestParam(value = "osType", required = false) String osType,
+			@RequestParam(value = "motorcycle", required = false) String motorcycle,
 			@RequestParam(value = "remark", required = false) String remark,
 			MultipartHttpServletRequest request) {
 		TechMdttPkg pkg = null;
@@ -447,6 +448,8 @@ public class MDTTPkgController {
 			pkg.setId(UUID.randomUUID());
 			pkg.setConentType(TechMdttPkg.CONTENT_TYPE.SSP);
 			pkg.setLastUpdateTime(new Date());
+			
+			pkg.setMotorcycle(motorcycle);//标签
 		} else {
 			pkg = (TechMdttPkg) this.commonService.get(id, TechMdttPkg.class);
 		}
@@ -510,6 +513,8 @@ public class MDTTPkgController {
 			/* 李伟改造资料库，修改标签改动 */
 			// pkg.setMotorcycle(motorcycle);
 			/*---------------------------20150820*/
+			
+			pkg.setMotorcycle(motorcycle);//标签
 			pkg.setosType(osType);
 			this.commonService.saveOrUpdateTX(pkg);
 			return new AjaxResponse(true);
@@ -600,6 +605,7 @@ public class MDTTPkgController {
 			pkg.setVersion("1");
 			pkg.setosType(osType);
 			pkg.setValid("1");
+			
 			this.commonService.saveOrUpdateTX(pkg);
 			return new AjaxResponse(true);
 		} else {
