@@ -1,4 +1,4 @@
-﻿//var cookie="cookie1";
+﻿var cookie="cookie1";
 $(function(){
 	$("#btnpre").on("click",function(){prePage()});
     $("#btnnext").on("click",function(){nextPage()});

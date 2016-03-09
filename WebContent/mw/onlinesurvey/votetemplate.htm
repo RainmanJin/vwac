@@ -2,119 +2,99 @@
 <html>
 <head>
 <link rel="stylesheet" href="css/style.css" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 <title>{title}_培训评估问卷</title>
-<script src="js/jquery.js" type="text/javascript"></script>
-<script src="js/jquery.lazyload.min.js" type="text/javascript"></script>
-<script src="js/jquery.cookie.js"></script>
+<script src="js/jquery.js" type="text/javascript"></script><script src="js/jquery.lazyload.min.js" type="text/javascript"></script><script src="js/jquery.cookie.js"></script>
 <script src="js/lhgdialog/lhgdialog.js?skin=idialog" type="text/javascript"></script>
-<script type="text/javascript">
-	var currentpage = 0;
-	var homeurl = "{id}.html";
-	var path = "{path}";
-	var cookie = "vwacvote_{id}";
+<script>var currentpage=0;//当前页
+var homeurl="{id}.html";
+var path="{path}";
+var cookie="vwacvote_{id}";
 </script>
 </head>
 <body>
-	<div class="main">
-		<!-- 首页-->
-		<div id="first">
-			<div class="top">
-				<img src="images/top.jpg" />
-			</div>
-			<div class="mid" id="mid">
-				<img src="images/mid.jpg" class="lazy" data-original="images/mid.jpg" />
-			</div>
-			<ul class="info">
-				<li>
-					<h2>
-						Training<br /> 课程名称
-					</h2> <span>{course}</span>
-				</li>
-				<li>
-					<h2>
-						Training Date ( Y / M / D )<br /> 开课时间 (年/月/日)
-					</h2> <span>{coursestarttime}~{courseendtime}</span>
-				</li>
-				<li>
-					<h2>
-						Trainer<br /> 培训讲师
-					</h2> <span>{teacher}</span>
-				</li>
-				<li>
-					<h2>
-						Place ( City / Hotal )<br /> 培训地点 (城市/宾馆)
-					</h2> <span>{address} </span>
-				</li>
-			</ul>
-			<div class="btn">
-				<a id="btnsecond">开始<br /> Start
-				</a>
-			</div>
-			<div class="tips">
-				<p>感谢您对本次课程的支持与配合。下面请您协助我们来完成课程培训的最后一个部分--共同探讨如何提高培训质量。请您利用几分钟的时间完成这份表格，以此对您刚结束的课程作出评价。本问卷为匿名方式。</p>
-				<p>Thank you for your support and coordination. This is the last part of the training – we like you to share with us how you experienced the training and what you suggest us do improvement.
-					Please take a few minutes to complete the training evaluation. This evaluation is anonymous.</p>
+<div class="main"><!-- 首页-->
+  <div id="first">
+    <div class="top"><img src="images/top.jpg" /></div>
+    <div class="mid" id="mid"><img src="images/mid.jpg" class="lazy" data-original="images/mid.jpg" /></div>
+    <ul class="info">
+      <li>
+        <h2>Training<br />
+          课程名称</h2>
+        <span>{course}</span></li>
+      <li>
+        <h2>Training Date ( Y / M / D )<br />
+          开课时间 (年/月/日)</h2>
+        <span>{coursestarttime}~{courseendtime}</span></li>
+      <li>
+        <h2>Trainer<br />
+          培训讲师</h2>
+        <span>{teacher}</span></li>
+      <li>
+        <h2>Place ( City / Hotal )<br />
+          培训地点 (城市/宾馆)</h2>
+        <span>{address} </span></li>
+    </ul>
+    <div class="btn"> <a id="btnsecond">开始<br />
+      Start</a> </div>
+    <div class="tips">
+    <p>感谢您对本次课程的支持与配合。下面请您协助我们来完成课程培训的最后一个部分--共同探讨如何提高培训质量。请您利用几分钟的时间完成这份表格，以此对您刚结束的课程作出评价。本问卷为匿名方式。</p>
+<p>Thank you for your support and coordination. This is the last part of the training – we like you to share with us how you experienced the training and what you suggest us do improvement. Please take a few minutes to complete the training evaluation. This evaluation is anonymous.</p>
 
-			</div>
-		</div>
-		<div id="second" style="display: none">
-			<div class="save nodisplay loading">
-				<h2>数据保存中，请稍候...</h2>
-			</div>
-			<div class="top">
-				<img src="images/top.jpg" />
-			</div>
-			{Content}
-		</div>
-		<div class="bottom">
-			<img src="images/vwac.png" />
-		</div>
-	</div>
-	<script src="js/function.js"></script>
-	<script type="text/javascript">
-		var winHeight;
-		var winWidth;
-		if (window.innerWidth)
-			winWidth = window.innerWidth;
-		else if ((document.body) && (document.body.clientWidth))
-			winWidth = document.body.clientWidth;
+    </div>
+  </div>
+  <div id="second" style="display:none">
+    <div class="save nodisplay loading">
+      <h2>数据保存中，请稍候...</h2>
+    </div>
+    <div class="top"><img src="images/top.jpg" /></div>
+    {Content}
+    </div>
+  <div class="bottom"> <img src="images/vwac.png" /></div>
+</div>
+<script src="js/function.js"></script>
+<script type="text/javascript">
+var winHeight;
+var winWidth;
+if (window.innerWidth)
+    winWidth = window.innerWidth;
+else if ((document.body) && (document.body.clientWidth))
+    winWidth = document.body.clientWidth;
 
-		// 获取窗口高度
+// 获取窗口高度
 
-		if (window.innerHeight)
-			winHeight = window.innerHeight;
-		else if ((document.body) && (document.body.clientHeight))
-			winHeight = document.body.clientHeight;
-		// 通过深入 Document 内部对 body 进行检测，获取窗口大小
+if (window.innerHeight)
+    winHeight = window.innerHeight;
+else if ((document.body) && (document.body.clientHeight))
+    winHeight = document.body.clientHeight;
+    // 通过深入 Document 内部对 body 进行检测，获取窗口大小
 
-		if (document.documentElement && document.documentElement.clientHeight
-				&& document.documentElement.clientWidth) {
-			winHeight = document.documentElement.clientHeight;
-			winWidth = document.documentElement.clientWidth;
-		}
+if (document.documentElement && document.documentElement.clientHeight  && document.documentElement.clientWidth){
+    winHeight = document.documentElement.clientHeight;
+    winWidth = document.documentElement.clientWidth;
+}
+                 
+window.onload = function(){
 
-		window.onload = function() {
-			// 先获取想要改变的所有图片对象（集合）
+    // 先获取想要改变的所有图片对象（集合）
 
-			var obj = document.getElementById("mid")
-					.getElementsByTagName("img");
+    var obj=document.getElementById("mid").getElementsByTagName("img");
 
-			for ( var i = 0; i < obj.length; i++) {
+    for(var i=0;i<obj.length;i++){
 
-				var width = obj[i].width;
+        var width = obj[i].width; 
 
-				// 判断图片宽度是否大于屏幕宽度
+        // 判断图片宽度是否大于屏幕宽度
 
-				if (width > winWidth) {
+       if(width > winWidth){
 
-					obj[i].width = winWidth;
+           obj[i].width = winWidth;
 
-				}
+       }
 
-			}
-		}
-	</script>
+    }
+}
+</script>
 </body>
 </html>
