@@ -1,0 +1,214 @@
+/*common css*/
+#bd{
+	width: 960px; margin: 0 auto;
+}
+*{
+	margin:0px;
+	padding:1px;
+	font:normal 12px "Arial","ËÎÌå","Helvetica","sans-serif";
+	color: #333;
+}
+select{
+	padding: 1px 3px;
+}
+
+a{
+	text-decoration: none;
+}
+ul,li{
+	list-style: none;
+}
+.clearfix_l{
+	clear: left;
+	height: 0px;
+}
+.clearfix_r{
+	clear: right;
+	height: 0px;
+}
+.clearfix_b{
+	clear: both;
+	height: 0px;
+}
+
+#loading{
+	position: absolute;
+	display: none;
+	z-index: 100000;
+	color: red;
+	left: 0px;
+	top: 0px;
+}
+#loading .text{
+	width: 270px;
+	height: 100px;
+	line-height:100px;
+	background: url("../images/loading.gif") no-repeat left center;
+	padding-left: 60px;
+	margin: auto auto;
+}
+
+
+/*site.css*/
+b.bold{
+	font-weight: bold; font-size: 14px; color: #2274AC;
+}
+#top{
+	height: 111px;
+}
+
+#banner{
+	height: 114px;
+}
+
+.centerbox{
+	border: 1px solid #e4e4e4; margin-top: -14px; padding-top: 10px;
+}
+#menu{
+	position: relative; top:-34px; height: 34px; width: 100%;background: #3675ac;
+	filter:alpha(Opacity=90);-moz-opacity:0.9;opacity: 0.9;
+}
+
+#menu ul{
+	/*margin-left: 30px;*/
+}
+
+/*padding-left: 15px; padding-right: 15px;*/
+#menu li{
+	float: left; text-align:center; padding-left: 8px; padding-right: 8px;
+}
+#menu li a{
+	height: 34px; line-height: 34px; font-size: 14px; color: #fff; 
+	/*font-family: "Tw Cen MT","ººÒÇºÚÌå","ËÎÌå","Arial Narrow";*/
+}
+
+#menu li.active{
+	background-color: #fff; height: 31px; position: relative;top:4px; 
+}
+#menu li.active a{
+	color: #3675ac;line-height: 30px;
+}
+
+#menu li.userinfo{
+	float: right; width: 170px; text-align: right; padding-right: 10px;
+}
+#menu li.userinfo span{
+	color: #fff;
+	height: 34px;
+	line-height: 34px;
+}
+
+.subTab{
+	border-bottom: 1px solid #ddd;
+}
+.subTab li{
+	float: left; padding: 0px 15px;
+}
+.subTab li a{
+	height: 25px; line-height: 25px; 
+}
+
+.subTab li.active{
+	background: #f0f0f0;
+}
+
+.subTab li.active a{
+	font-weight: bold;
+}
+/*content layout*/
+#contentwrapper{
+	float: left;
+	width: 100%;
+}
+#contentwrapperquestion{
+	float: left;
+	width: 800px;
+}
+
+#content_left{
+	width: 208px;
+	float: left;
+	margin-left: -100%;
+	padding-left: 5px;
+}
+
+ul.listMenu li a{
+	height: 24px; line-height: 24px;
+}
+ul.listMenu li{
+	height: 28px; line-height: 28px; border-bottom:1px solid #e4e4e4; 
+}
+
+ul.listMenu li.active{
+	padding-left: 10px; background: url("../images/cur.jpg") no-repeat left center;
+}
+ul.listMenu li.active a{
+	color: #2274ac; font-weight: bold; font-size: 14px;
+}
+
+.listMenu li.subMenu{
+	height: auto;
+	line-height: auto;
+}
+
+
+li.subMenu div{
+	height:36px; line-height:36px; border-bottom:1px solid #e4e4e4; padding-left:20px; background:url('../images/open.jpg') no-repeat left center; font-size:14px; font-weight:bold;
+}
+.subMenu ul.listMenu li{
+	margin-left: 20px; border: none; height: 24px; line-height: 24px;
+}
+
+
+#content_right{
+	margin-left: 228px !important;
+}
+
+#content_right_question{
+	margin-left: 60px !important;
+}
+#content_right1{
+		margin-left: 108px !important;
+}
+
+div.tt{
+	height:36px; line-height:36px; border-bottom:1px solid #e4e4e4; font-size:14px; font-weight:bold;margin-bottom:20px;
+}
+
+#footer{
+	padding: 30px; text-align: center;
+}
+#footer li{
+	float: left; padding:0px 20px; border-right: 1px solid #c4ce4e4;height: 24px; line-height: 24px; color: #c0c0c0;
+}
+#footer li a{
+	height: 24px; line-height: 24px; color: #c0c0c0;
+}
+.btns{
+	text-align: left; margin: 10px 0px;
+}
+span.btn{
+	display: inline-block;; background: url('../images/button_left.jpg'); padding: 0px; float: none; margin-right: 16px;
+}
+span.btn a{
+	height: 30px; line-height: 30px; font-size: 14px; color: #fff; background: url('../images/button_right.jpg') no-repeat right top; padding:0px 20px; display: inline-block;
+}
+
+span.graybtn{
+	display: inline-block;; background: url('../images/gray_button.jpg'); padding: 0px; float: none; margin-right: 20px;
+}
+span.graybtn a{
+	height: 30px; line-height: 30px; font-size: 14px; color: #636363; background: url('../images/gray_button_right.jpg') no-repeat right top; padding:0px 20px; display: inline-block;
+}
+
+.search{
+	background: url("../platform/images/filter_bg.gif") no-repeat right center;
+}
+
+input.gray{
+	background-color: #ddd;
+}
+
+.oper{
+	text-decoration: underline;
+}

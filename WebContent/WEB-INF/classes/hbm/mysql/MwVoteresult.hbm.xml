@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 23, 2016 11:15:36 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="com.ecannetwork.dto.tech.MwVoteresult" table="mw_voteresult">
+		<id name="id" type="string"><!--原来名称改为id。原来类型为：java.lang.Integer，修改为string，为了匹配DtoSupport。实体类中id类型也要修改 -->
+			<column name="N_ResId" />
+			<generator class="identity" />
+		</id>
+		<property name="NKeyId" type="java.lang.Integer">
+			<column name="N_KeyId" />
+		</property>
+		<property name="NSubId" type="java.lang.Integer">
+			<column name="N_SubId" />
+		</property>
+		<property name="CReuslt" type="string">
+			<column name="C_Reuslt" />
+		</property>
+		<property name="NTestId" type="java.lang.Integer">
+			<column name="N_TestId" />
+		</property>
+		<property name="NVoteId" type="java.lang.Integer">
+			<column name="N_VoteId" />
+		</property>
+		<property name="NSysId" type="java.lang.Integer">
+			<column name="N_SysId" />
+		</property>
+		<property name="dtDate" type="timestamp">
+			<column name="DT_Date" length="0" />
+		</property>
+		<property name="NLogicPageId" type="java.lang.Integer">
+			<column name="N_LogicPageId" />
+		</property>
+		<property name="CLic" type="string">
+			<column name="C_Lic" length="200" />
+		</property>
+		<property name="CIp" type="string">
+			<column name="C_Ip" length="50" />
+		</property>
+	</class>
+</hibernate-mapping>

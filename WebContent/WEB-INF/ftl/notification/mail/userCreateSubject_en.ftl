@@ -1,0 +1,1 @@
+Hello ${user.name}, VWAC portal account have been opened for you, Welcome ~

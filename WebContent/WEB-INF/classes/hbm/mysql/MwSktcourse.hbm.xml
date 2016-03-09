@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-2-21 14:22:25 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+  <class name="com.ecannetwork.dto.tech.MwSktcourse" table="mw_sktcourse">
+    <id name="id" type="string">
+      <column name="Id" />
+      <generator class="identity" />
+    </id>
+    <property name="CName" type="java.lang.String">
+      <column name="C_NAME" />
+    </property>
+    <property name="CCode" type="java.lang.String">
+      <column name="C_CODE" />
+    </property>
+    <property name="CCourseid" type="java.lang.Integer">
+      <column name="C_COURSEID" />
+    </property>
+    <property name="CCourse" type="java.lang.String">
+      <column name="C_COURSE" />
+    </property>
+    <property name="dtCreateTime" type="timestamp">
+      <column name="CREATETIME" length="0" />
+    </property>
+    <property name="islocked" type="java.lang.Integer">
+      <column name="ISLOCK" />
+    </property>
+    <property name="CContent" type="java.lang.String" access="field">
+      <column name="C_CONTENT" />
+    </property>
+  </class>
+</hibernate-mapping>

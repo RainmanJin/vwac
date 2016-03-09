@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 23, 2016 11:15:36 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.ecannetwork.dto.tech.MwVotekey" table="mw_votekey">
+        <id name="id" type="string"><!--原来名称改为id。原来类型为：java.lang.Integer，修改为string，为了匹配DtoSupport。实体类中id类型也要修改 -->
+            <column name="N_KeyId" />
+            <generator class="identity" />
+        </id>
+        <property name="NSubId" type="java.lang.Integer">
+            <column name="N_SubId" />
+        </property>
+        <property name="CKeyTitle" type="string">
+            <column name="C_KeyTitle" />
+        </property>
+        <property name="NType" type="java.lang.Integer">
+            <column name="N_Type" />
+        </property>
+        <property name="NOrderId" type="java.lang.Integer">
+            <column name="N_OrderId" />
+        </property>
+        <property name="CRule" type="string">
+            <column name="C_Rule" length="100" />
+        </property>
+        <property name="NScore" type="java.lang.Integer">
+            <column name="N_Score" />
+        </property>
+        <property name="CLogicSub" type="string">
+            <column name="C_LogicSub" />
+        </property>
+        <property name="imgpath" type="string">
+            <column name="imgpath" />
+        </property>
+    </class>
+</hibernate-mapping>

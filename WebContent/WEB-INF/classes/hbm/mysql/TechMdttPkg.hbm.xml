@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.ecannetwork.dto.tech.TechMdttPkg" table="TechMdttPkg">
+		<id name="id" type="java.lang.String">
+			<column name="ID" />
+			<generator class="assigned" />
+		</id>
+		<property name="name" type="java.lang.String">
+			<column name="name" />
+		</property>
+		<property name="fixedName" type="java.lang.String">
+			<column name="fixedName" />
+		</property>
+		<property name="version" type="java.lang.String">
+			<column name="version" />
+		</property>
+		<property name="filePath" type="java.lang.String">
+			<column name="filePath" />
+		</property>
+		<property name="previewPath" type="java.lang.String">
+			<column name="previewPath" />
+		</property>
+		<property name="jsonMenu" type="java.lang.String">
+			<column name="jsonMenu" />
+		</property>
+		<property name="brand" type="java.lang.String">
+			<column name="brand" />
+		</property>
+		<property name="proType" type="java.lang.String">
+			<column name="proType" />
+		</property>
+		<property name="status" type="java.lang.String">
+			<column name="status" />
+		</property>
+		<property name="trianPlanID" type="java.lang.String">
+			<column name="trianPlanID" />
+		</property>
+		<property name="lastUpdateTime" type="java.util.Date">
+			<column name="lastUpdateTime" />
+		</property>
+		<property name="conentType" type="java.lang.String">
+			<column name="conentType" />
+		</property>
+		<property name="pkgType" type="java.lang.String">
+			<column name="pkgType" />
+		</property>
+		<property name="remark" type="java.lang.String">
+			<column name="remark" />
+		</property>
+		<property name="iconURL" type="java.lang.String">
+			<column name="iconURL" />
+		</property>
+		<property name="valid" type="java.lang.String">
+			<column name="valid" />
+		</property>
+		<property name="fileSize" type="java.lang.String">
+			<column name="fileSize" />
+		</property>
+		<property name="versionCode" type="java.lang.Integer">
+			<column name="versionCode" />
+		</property>
+               <property name="motorcycle" type="java.lang.String">
+			<column name="motorcycle" />
+		</property>
+                <property name="icon1URL" type="java.lang.String">
+			<column name="icon1URL" />
+		</property>
+                <property name="icon2URL" type="java.lang.String">
+			<column name="icon2URL" />
+		</property>
+                <property name="osType" type="java.lang.String">
+			<column name="osType" />
+		</property>
+	</class>
+</hibernate-mapping>

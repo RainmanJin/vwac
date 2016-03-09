@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Rule>
+	<Item>
+		<Prompt>电话号码</Prompt>
+		<Expression>(\(\d{3}\)|\d{3}-)?\d{8}</Expression>
+	</Item>
+	<Item>
+		<Prompt>身份证号码</Prompt>
+		<Expression>\d{17}[\d|X]|\d{15}</Expression>
+	</Item>
+	<Item>
+		<Prompt>邮政编码</Prompt>
+		<Expression>\d{6}</Expression>
+	</Item>
+	<Item>
+		<Prompt>电子邮件</Prompt>
+		<Expression>\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*</Expression>
+	</Item>
+	<Item>
+		<Prompt>网址</Prompt>
+		<Expression>http(s)?://([\w-]+\.)+[\w-]+(/[\w- ./?%&amp;=]*)?</Expression>
+	</Item>
+	<Item>
+		<Prompt>可选填写</Prompt>
+		<Expression>*</Expression>
+	</Item>
+	<Item>
+		<Prompt>手机号码</Prompt>
+		<Expression>^13[0-3|5-9]\d{8}$</Expression>
+	</Item>
+	<Item>
+		<Prompt>限制字符1-20个</Prompt>
+		<Expression>^[\s\S]{1,20}$</Expression>
+	</Item>
+	<Item>
+		<Prompt>限制字符1-200个</Prompt>
+		<Expression>^[\s\S]{1,200}$</Expression>
+	</Item>
+	<Item>
+		<Prompt>大于0小于100</Prompt>
+		<Expression>^[1-9][0-9]?$</Expression>
+	</Item>
+
+</Rule>

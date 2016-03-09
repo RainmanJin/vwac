@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 23, 2016 11:15:36 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.ecannetwork.dto.tech.MwServicecost" table="mw_servicecost">
+		<id name="id" type="string"><!--原来类型为：java.lang.Integer，修改为string，为了匹配DtoSupport。实体类中id类型也要修改 -->
+            <column name="Id" />
+            <generator class="identity" />
+        </id>
+        <property name="userid" type="string">
+            <column name="Userid" length="32" />
+        </property>
+        <property name="content" type="string">
+            <column name="Content" length="65535" />
+        </property>
+        <property name="tableid" type="string">
+            <column name="Tableid" length="30" />
+        </property>
+        <property name="projectid" type="java.lang.Integer">
+            <column name="projectid" />
+        </property>
+        <property name="a1" type="java.lang.Integer">
+            <column name="A1" />
+        </property>
+        <property name="a2" type="java.lang.Integer">
+            <column name="A2" />
+        </property>
+        <property name="a3" type="string">
+            <column name="A3" length="200" />
+        </property>
+        <property name="a4" type="string">
+            <column name="A4" length="65535" />
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="CreateTime" length="0" />
+        </property>
+    </class>
+</hibernate-mapping>

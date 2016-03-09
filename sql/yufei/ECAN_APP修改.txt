@@ -1,0 +1,14 @@
+update ECAN_APP set app_code='vwsurvey',fun_name='调查管理',fun_code='index',outside_url=null where id=8002;
+
+update ECAN_APP set app_code='vwsurveyresult',fun_name='调查结果分析',fun_code='index',outside_url=null where id=8004;
+
+update ECAN_APP set app_code='servicecost',fun_name='服务费用计算',fun_code='index',outside_url=null where id=8006;
+
+update ECAN_APP set app_code='vwtestdrive',fun_name='试乘试驾管理',fun_code='index',outside_url=null where id=8007;
+
+update ecan_app set fun_name='独立包管理',fun_code='index',outside_url=null where id=8008;
+
+
+update ecan_app set fun_name='微信新闻管理',fun_code='index',outside_url=null where id=8104;
+
+update ecan_app SET APP_CODE = 'vwsurveymakevote', FUN_CODE = "index" WHERE ID = '8003'; 

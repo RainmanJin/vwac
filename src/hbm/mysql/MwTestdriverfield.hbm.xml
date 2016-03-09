@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 23, 2016 11:15:36 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.ecannetwork.dto.tech.MwTestdriverfield" table="mw_testdriverfield">
+        <id name="id" type="string"><!--原来类型为：java.lang.Integer，修改为string，为了匹配DtoSupport。实体类中id类型也要修改 -->
+            <column name="Id" />
+            <generator class="identity" />
+        </id>
+        <property name="CName" type="string">
+            <column name="C_Name" length="150">
+                <comment>&#215;&#214;&#182;&#206;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="parentId" type="java.lang.Integer">
+            <column name="ParentId">
+                <comment>&#184;&#184;&#188;&#182;</comment>
+            </column>
+        </property>
+        <property name="colPath" type="string">
+            <column name="ColPath" length="65535">
+                <comment>&#202;&#247;&#208;&#206;&#163;&#168;0&#163;&#172;1&#163;&#172;2&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="orderby" type="java.lang.Integer">
+            <column name="Orderby">
+                <comment>&#197;&#197;&#208;&#242;</comment>
+            </column>
+        </property>
+        <property name="isUse" type="java.lang.Integer">
+            <column name="isUse">
+                <comment>&#202;&#199;&#183;&#241;&#202;&#185;&#211;&#195;</comment>
+            </column>
+        </property>
+        <property name="remark" type="string">
+            <column name="remark" length="250" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-3-1 22:09:32 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+  <class name="com.ecannetwork.dto.tech.SqPassatB8" table="sq_passat_b8">
+    <id name="id" type="string">
+      <column name="Id" />
+      <generator class="identity" />
+    </id>
+    <property name="usertype" type="java.lang.String">
+      <column name="USERTYPE" />
+    </property>
+    <property name="type" type="java.lang.String">
+      <column name="TYPE" />
+    </property>
+    <property name="startTime" type="java.util.Date">
+      <column name="STARTTIME" />
+    </property>
+    <property name="carType" type="java.lang.String">
+      <column name="CARTYPE" />
+    </property>
+    <property name="bigItem" type="java.lang.String">
+      <column name="BIGITEM" />
+    </property>
+    <property name="item" type="java.lang.String">
+      <column name="ITEM" />
+    </property>
+    <property name="score" type="java.lang.Double">
+      <column name="SCORE" />
+    </property>
+  </class>
+</hibernate-mapping>

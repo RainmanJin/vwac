@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+您 Web 项目的发布/打包进程将使用此文件。您可以通过编辑此 MSBuild 文件
+来自定义该进程的行为。若要了解与此相关的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkID=208121。
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>D:\WorkSpace\kehu\Volkswagen\Portal2012\pub</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="appservice/portal/index.aspx">
+      <publishTime>11/19/2014 10:18:18</publishTime>
+    </File>
+    <File Include="appservice/portal/ipadupload.aspx">
+      <publishTime>11/23/2014 20:39:51</publishTime>
+    </File>
+    <File Include="appservice/retailknowhow/index.aspx">
+      <publishTime>11/25/2014 16:59:11</publishTime>
+    </File>
+    <File Include="appservice/servicecost/index.aspx">
+      <publishTime>07/23/2014 16:23:25</publishTime>
+    </File>
+    <File Include="appservice/testdriver/index.aspx">
+      <publishTime>11/25/2014 17:30:05</publishTime>
+    </File>
+    <File Include="bin/ICSharpCode.SharpZipLib.dll">
+      <publishTime>02/10/2014 12:58:28</publishTime>
+    </File>
+    <File Include="bin/MySql.Data.dll">
+      <publishTime>09/19/2014 07:41:46</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>02/10/2014 12:58:30</publishTime>
+    </File>
+    <File Include="bin/PortalBLL.dll">
+      <publishTime>11/27/2014 15:26:41</publishTime>
+    </File>
+    <File Include="bin/PortalCommon.dll">
+      <publishTime>11/27/2014 15:26:40</publishTime>
+    </File>
+    <File Include="bin/PortalControls.dll">
+      <publishTime>11/27/2014 15:26:40</publishTime>
+    </File>
+    <File Include="bin/PortalModel.dll">
+      <publishTime>11/27/2014 15:26:40</publishTime>
+    </File>
+    <File Include="bin/PortalWeb.dll">
+      <publishTime>11/27/2014 15:26:41</publishTime>
+    </File>
+    <File Include="bin/Senparc.Weixin.MP.dll">
+      <publishTime>05/09/2014 01:12:02</publishTime>
+    </File>
+    <File Include="bin/ThoughtWorks.QRCode.dll">
+      <publishTime>06/06/2014 10:55:38</publishTime>
+    </File>
+    <File Include="mw/ashx/_upfile.aspx">
+      <publishTime>11/21/2014 15:44:56</publishTime>
+    </File>
+    <File Include="mw/ashx/_upload.aspx">
+      <publishTime>11/21/2014 16:28:02</publishTime>
+    </File>
+    <File Include="mw/clearcache.aspx">
+      <publishTime>11/05/2014 18:01:19</publishTime>
+    </File>
+    <File Include="mw/Default.Master">
+      <publishTime>11/27/2014 14:36:24</publishTime>
+    </File>
+    <File Include="mw/DefaultDetail.Master">
+      <publishTime>11/27/2014 14:36:24</publishTime>
+    </File>
+    <File Include="mw/info/infodetail.aspx">
+      <publishTime>11/26/2014 19:34:57</publishTime>
+    </File>
+    <File Include="mw/info/infolist.aspx">
+      <publishTime>11/27/2014 14:36:24</publishTime>
+    </File>
+    <File Include="mw/info/wkdetail.aspx">
+      <publishTime>11/21/2014 16:28:02</publishTime>
+    </File>
+    <File Include="mw/info/wklist.aspx">
+      <publishTime>11/27/2014 14:36:24</publishTime>
+    </File>
+    <File Include="mw/onlinesurvey/Code.aspx">
+      <publishTime>07/29/2014 12:18:08</publishTime>
+    </File>
+    <File Include="mw/onlinesurvey/err.htm">
+      <publishTime>11/11/2014 18:04:49</publishTime>
+    </File>
+    <File Include="mw/onlinesurvey/getresult.aspx">
+      <publishTime>11/06/2014 13:37:16</publishTime>
+    </File>
+    <File Include="mw/onlinesurvey/Result.htm">
+      <publishTime>11/06/2014 13:42:01</publishTime>
+    </File>
+    <File Include="mw/onlinesurvey/Rule.xml">
+      <publishTime>07/29/2014 12:19:56</publishTime>
+    </File>
+    <File Include="mw/onlinesurvey/votetemplate.htm">
+      <publishTime>08/12/2014 15:26:08</publishTime>
+    </File>
+    <File Include="mw/plan/applyplanlist.aspx">
+      <publishTime>11/26/2014 19:18:12</publishTime>
+    </File>
+    <File Include="mw/plan/smsDetail.aspx">
+      <publishTime>11/21/2014 15:44:55</publishTime>
+    </File>
+    <File Include="mw/plan/smslist.aspx">
+      <publishTime>11/21/2014 15:44:55</publishTime>
+    </File>
+    <File Include="mw/plan/tmpcodeDetail.aspx">
+      <publishTime>11/19/2014 10:03:51</publishTime>
+    </File>
+    <File Include="mw/plan/tmpcodedialog.aspx">
+      <publishTime>11/27/2014 14:45:42</publishTime>
+    </File>
+    <File Include="mw/plan/tmpcodelist.aspx">
+      <publishTime>11/26/2014 21:08:06</publishTime>
+    </File>
+    <File Include="mw/plan/trainingplanslist.aspx">
+      <publishTime>11/27/2014 14:46:38</publishTime>
+    </File>
+    <File Include="mw/retailknowhow/index.aspx">
+      <publishTime>11/05/2014 17:26:21</publishTime>
+    </File>
+    <File Include="mw/retailknowhow/sktchapterdetail.aspx">
+      <publishTime>11/12/2014 17:13:21</publishTime>
+    </File>
+    <File Include="mw/retailknowhow/sktchapterlist.aspx">
+      <publishTime>11/27/2014 14:36:24</publishTime>
+    </File>
+    <File Include="mw/retailknowhow/sktcoursedetail.aspx">
+      <publishTime>11/12/2014 17:13:21</publishTime>
+    </File>
+    <File Include="mw/retailknowhow/sktcourselist.aspx">
+      <publishTime>11/27/2014 14:36:24</publishTime>
+    </File>
+    <File Include="mw/retailknowhow/sktitemdetali.aspx">
+      <publishTime>11/12/2014 17:13:21</publishTime>
+    </File>
+    <File Include="mw/retailknowhow/sktitemlist.aspx">
+      <publishTime>11/27/2014 14:36:24</publishTime>
+    </File>
+    <File Include="mw/servicecost/index.aspx">
+      <publishTime>11/05/2014 17:26:19</publishTime>
+    </File>
+    <File Include="mw/test.aspx">
+      <publishTime>11/05/2014 17:26:19</publishTime>
+    </File>
+    <File Include="mw/vwsurvey/biceitem.aspx">
+      <publishTime>11/24/2014 21:10:23</publishTime>
+    </File>
+    <File Include="mw/vwsurvey/biceitemdetail.aspx">
+      <publishTime>11/11/2014 17:25:50</publishTime>
+    </File>
+    <File Include="mw/vwsurvey/biceoption.aspx">
+      <publishTime>11/27/2014 14:36:24</publishTime>
+    </File>
+    <File Include="mw/vwsurvey/index.aspx">
+      <publishTime>11/06/2014 10:31:52</publishTime>
+    </File>
+    <File Include="mw/vwsurvey/makeitem.aspx">
+      <publishTime>11/24/2014 21:10:23</publishTime>
+    </File>
+    <File Include="mw/vwsurvey/makeitemdetail.aspx">
+      <publishTime>11/11/2014 16:03:09</publishTime>
+    </File>
+    <File Include="mw/vwsurvey/makevote.aspx">
+      <publishTime>11/11/2014 17:29:15</publishTime>
+    </File>
+    <File Include="mw/vwsurvey/makevotedetail.aspx">
+      <publishTime>11/11/2014 17:22:26</publishTime>
+    </File>
+    <File Include="mw/vwsurvey/statreport.aspx">
+      <publishTime>11/11/2014 17:32:39</publishTime>
+    </File>
+    <File Include="mw/vwsurvey/statresult.aspx">
+      <publishTime>11/11/2014 17:32:26</publishTime>
+    </File>
+    <File Include="mw/vwsurvey/statvote.aspx">
+      <publishTime>11/11/2014 17:32:09</publishTime>
+    </File>
+    <File Include="mw/vwsurvey/styledetail.aspx">
+      <publishTime>11/07/2014 11:40:54</publishTime>
+    </File>
+    <File Include="mw/vwsurvey/stylevote.aspx">
+      <publishTime>11/06/2014 10:31:52</publishTime>
+    </File>
+    <File Include="mw/vwsurvey/surveypub.aspx">
+      <publishTime>11/07/2014 11:30:46</publishTime>
+    </File>
+    <File Include="mw/vwsurvey/voteexport.aspx">
+      <publishTime>11/06/2014 10:31:52</publishTime>
+    </File>
+    <File Include="mw/vwsurvey/voteexportdetsail.aspx">
+      <publishTime>11/06/2014 10:31:52</publishTime>
+    </File>
+    <File Include="mw/vwsurvey/votelist.aspx">
+      <publishTime>11/10/2014 13:44:35</publishTime>
+    </File>
+    <File Include="mw/vwsurvey/voteunit.aspx">
+      <publishTime>11/24/2014 21:10:23</publishTime>
+    </File>
+    <File Include="mw/vwsurvey/voteunitdetail.aspx">
+      <publishTime>11/11/2014 15:54:14</publishTime>
+    </File>
+    <File Include="mw/vwsurvey/_votedialog.aspx">
+      <publishTime>11/06/2014 10:31:53</publishTime>
+    </File>
+    <File Include="mw/vwtestdrive/changdidetail.aspx">
+      <publishTime>11/21/2014 15:44:55</publishTime>
+    </File>
+    <File Include="mw/vwtestdrive/chexidetail.aspx">
+      <publishTime>11/27/2014 15:17:14</publishTime>
+    </File>
+    <File Include="mw/vwtestdrive/coursedetail.aspx">
+      <publishTime>11/27/2014 15:20:57</publishTime>
+    </File>
+    <File Include="mw/vwtestdrive/testdriverdetail.aspx">
+      <publishTime>11/27/2014 15:17:14</publishTime>
+    </File>
+    <File Include="mw/vwtestdrive/testdriverfielddetail.aspx">
+      <publishTime>11/12/2014 17:13:21</publishTime>
+    </File>
+    <File Include="mw/vwtestdrive/testdriverfieldlist.aspx">
+      <publishTime>11/25/2014 16:33:07</publishTime>
+    </File>
+    <File Include="mw/vwtestdrive/testdriverlist.aspx">
+      <publishTime>11/26/2014 14:55:05</publishTime>
+    </File>
+    <File Include="mw/vwtestdrive/testdriverpglist.aspx">
+      <publishTime>11/21/2014 15:44:55</publishTime>
+    </File>
+    <File Include="mw/vwtestdrive/testdrivertimedetail.aspx">
+      <publishTime>11/12/2014 17:13:21</publishTime>
+    </File>
+    <File Include="mw/vwtestdrive/testdrivertimeList.aspx">
+      <publishTime>11/21/2014 15:44:55</publishTime>
+    </File>
+    <File Include="mw/vwtestdrive/_userdialog.aspx">
+      <publishTime>11/27/2014 15:20:57</publishTime>
+    </File>
+    <File Include="mw/vwtestdrive/_usersdialog.aspx">
+      <publishTime>11/27/2014 15:20:57</publishTime>
+    </File>
+    <File Include="mw/wap/debug.aspx">
+      <publishTime>11/25/2014 18:39:38</publishTime>
+    </File>
+    <File Include="mw/wap/goUrl.aspx">
+      <publishTime>11/15/2014 14:26:10</publishTime>
+    </File>
+    <File Include="mw/wap/Info/infolist.aspx">
+      <publishTime>11/26/2014 14:03:34</publishTime>
+    </File>
+    <File Include="mw/wap/Info/infoview.aspx">
+      <publishTime>11/26/2014 14:03:43</publishTime>
+    </File>
+    <File Include="mw/wap/Info/wklist.aspx">
+      <publishTime>11/26/2014 14:04:26</publishTime>
+    </File>
+    <File Include="mw/wap/Info/wkview.aspx">
+      <publishTime>11/26/2014 14:04:16</publishTime>
+    </File>
+    <File Include="mw/wap/OAuth2.ashx">
+      <publishTime>11/15/2014 14:26:10</publishTime>
+    </File>
+    <File Include="mw/wap/plan/applyplan.aspx">
+      <publishTime>11/25/2014 18:39:02</publishTime>
+    </File>
+    <File Include="mw/wap/plan/myplan.aspx">
+      <publishTime>11/26/2014 14:04:52</publishTime>
+    </File>
+    <File Include="mw/wap/plan/oauth.aspx">
+      <publishTime>11/26/2014 14:18:45</publishTime>
+    </File>
+    <File Include="mw/wap/plan/planlist.aspx">
+      <publishTime>11/26/2014 14:19:46</publishTime>
+    </File>
+    <File Include="mw/wap/plan/planview.aspx">
+      <publishTime>11/26/2014 19:40:37</publishTime>
+    </File>
+    <File Include="mw/wap/plan/searchplanlist.aspx">
+      <publishTime>11/26/2014 19:40:16</publishTime>
+    </File>
+    <File Include="mw/wap/Wap.Master">
+      <publishTime>11/24/2014 21:22:16</publishTime>
+    </File>
+    <File Include="test.aspx">
+      <publishTime>10/31/2014 17:24:43</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>11/27/2014 15:26:42</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

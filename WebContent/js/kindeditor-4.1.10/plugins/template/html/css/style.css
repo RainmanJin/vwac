@@ -1,0 +1,51 @@
+@charset "utf-8";
+*{ padding: 0; margin: 0; list-style: none; border: 0;}
+html, body{ width: 100%; height: 100%;font: 10px/1.25  "微软雅黑", "Microsoft YaHei", Arial; }
+html, body, ul, ol, li, h1, h2, h3, h4, h5, h6, p ,dl, dt, dd{ margin: 0; padding: 0; }
+body { background-color: #fff; }
+ul, ol, li { list-style: none; }
+input, select, textarea, button{ font: 10px/1.25 "微软雅黑",Arial, Helvetica, sans-serif; border-radius: 0;}
+textarea{ outline:none; resize:none;}
+a { text-decoration: none; color: #128df5;}
+img{ vertical-align:middle; border:none;}
+em { font-style: normal; }
+@media (min-width: 320px) and (max-width: 374px) {
+    html, body{ font-size: 12px; }
+    input, select, textarea, button{ font-size: 12px;}
+}
+@media (min-width: 375px) and (max-width: 479px){
+    html, body{ font-size: 14px; }
+    input, select, textarea, button{ font-size: 14px;}
+}
+@media (min-width: 480px) and (max-width: 539px){
+    html, body{ font-size: 18px; }
+    input, select, textarea, button{ font-size: 18px;}
+}
+@media (min-width: 540px) and (max-width: 599px){
+    html, body{ font-size: 20px; }
+    input, select, textarea, button{ font-size: 20px;}
+}
+@media (min-width: 600px) {
+    html, body{ font-size: 22px; }
+    input, select, textarea, button{ font-size: 22px;}
+}
+
+.container{ padding:1rem; line-height:1.8rem;}
+.bt{ font-size:1.6rem; text-align:center; line-height:3rem; border-bottom:1px solid #212121; font-weight:bold;}
+.pic img{width:100%; padding-top:1.5rem;}
+.content{ border:1px solid #afafaf; margin-top:3rem; padding:1rem 0.5rem; position:relative;}
+.content_title{ font-size:1.4rem; color:#FFF; font-weight:bold; background:#666666; padding:0.5rem; text-align:center; position:absolute; top:-1.5rem; left:1rem;}
+.content_word{ padding-top:1.5rem; color:#212121; font-size:1.2rem;}
+.video{ margin-top:3rem;}
+.content_word ul{padding-left:1.5rem; }
+.content_word ul li{ list-style:disc;}
+.content_word ul.small_nei li{ list-style:circle;}
+.theme{margin-top:2rem;}
+.theme_name{ font-size:1.4rem; font-weight:bold; color:#FFF; background:#b5b5b5; padding:0.5rem 2rem;}
+
+.theme_relevant ul li img{ width:80%;margin-top:5%; margin-left:5%;}
+
+.vwac_content_left{width:60%;float:left;}
+.vwac_content_inner{height:100%;}
+.vwac_content_right{width:30%;height:100%;float:right}
+

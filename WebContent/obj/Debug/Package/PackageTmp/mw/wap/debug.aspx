@@ -1,0 +1,1 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/mw/wap/Wap.Master" AutoEventWireup="true" CodeBehind="debug.aspx.cs" Inherits="PortalWeb.mw.wap.debug" %>

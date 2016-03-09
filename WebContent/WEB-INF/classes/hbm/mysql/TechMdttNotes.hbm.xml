@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.ecannetwork.dto.tech.TechMdttNotes" table="TechMdttNotes">
+		<id name="uid" type="java.lang.Integer">
+			<column name="uid" />
+			<generator class="native" />
+		</id>
+		<property name="pkgID" type="java.lang.String">
+			<column name="pkgID" />
+		</property>
+		<property name="menuID" type="java.lang.String">
+			<column name="menuID" />
+		</property>
+		<property name="contentType" type="java.lang.String">
+			<column name="contentType" />
+		</property>
+		<property name="content" type="java.lang.String">
+			<column name="content" />
+		</property>
+		<property name="ownerID" type="java.lang.String">
+			<column name="ownerID" />
+		</property>
+
+		<property name="createTime" type="java.util.Date">
+			<column name="createTime" />
+		</property>
+	</class>
+</hibernate-mapping>

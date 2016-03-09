@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 23, 2016 11:15:36 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="com.ecannetwork.dto.tech.MwVotecourse" table="mw_votecourse">
+		<id name="id" type="string"><!--原来类型为：java.lang.Integer，修改为string，为了匹配DtoSupport。实体类中id类型也要修改 -->
+			<column name="Id" />
+			<generator class="identity" />
+		</id>
+		<property name="CTitle" type="string">
+			<column name="C_Title" />
+		</property>
+		<property name="dtOverDate" type="timestamp">
+			<column name="DT_OverDate" length="0" />
+		</property>
+		<property name="CReturnUrl" type="string">
+			<column name="C_ReturnUrl" />
+		</property>
+		<property name="NCodeSurvey" type="java.lang.Integer">
+			<column name="N_CodeSurvey" />
+		</property>
+		<property name="dtStartDate" type="timestamp">
+			<column name="DT_StartDate" length="0" />
+		</property>
+		<property name="CTearcher" type="string">
+			<column name="C_Tearcher" />
+		</property>
+		<property name="CAdrees" type="string">
+			<column name="C_Adrees" />
+		</property>
+		<property name="CCode" type="string">
+			<column name="C_Code" />
+		</property>
+		<property name="NSysId" type="java.lang.Integer">
+			<column name="N_SysId" />
+		</property>
+		<property name="NType" type="java.lang.Integer">
+			<column name="N_Type" />
+		</property>
+		<property name="CCourse" type="string">
+			<column name="C_course" />
+		</property>
+		<property name="pxnum" type="string">
+			<column name="pxnum" length="50" />
+		</property>
+		<property name="courseStart" type="timestamp">
+			<column name="CourseStart" length="0" />
+		</property>
+		<property name="courseEnd" type="timestamp">
+			<column name="CourseEnd" length="0" />
+		</property>
+	</class>
+</hibernate-mapping>

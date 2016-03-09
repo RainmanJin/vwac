@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 23, 2016 11:15:36 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.ecannetwork.dto.tech.MwTestdriver" table="mw_testdriver">
+        <id name="id" type="string"><!--原来类型为：java.lang.Integer，修改为string，为了匹配DtoSupport。实体类中id类型也要修改 -->
+            <column name="Id" />
+            <generator class="identity" />
+        </id>
+        <property name="CName" type="string">
+            <column name="C_Name" length="200">
+                <comment>&#202;&#212;&#188;&#221;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="CCode" type="string">
+            <column name="C_Code" length="100">
+                <comment>&#191;&#206;&#179;&#204;&#194;&#235;</comment>
+            </column>
+        </property>
+        <property name="CCourseid" type="string">
+            <column name="C_Courseid" length="32">
+                <comment>&#191;&#206;&#179;&#204;ID</comment>
+            </column>
+        </property>
+        <property name="CCourse" type="string">
+            <column name="C_Course" length="200">
+                <comment>&#191;&#206;&#179;&#204;</comment>
+            </column>
+        </property>
+        <property name="CTeacherid" type="string">
+            <column name="C_Teacherid" length="32">
+                <comment>&#192;&#207;&#202;&#166;ID</comment>
+            </column>
+        </property>
+        <property name="CTeacher" type="string">
+            <column name="C_Teacher" length="50">
+                <comment>&#192;&#207;&#202;&#166;I</comment>
+            </column>
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="CreateTime" length="0">
+                <comment>&#202;&#177;&#188;&#228;&#163;&#168;&#196;&#172;&#200;&#207;Now&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="students" type="string">
+            <column name="Students" length="65535">
+                <comment>&#209;&#167;&#212;&#177;ID</comment>
+            </column>
+        </property>
+        <property name="chexi" type="string">
+            <column name="Chexi" length="65535">
+                <comment>&#179;&#181;&#208;&#205;ID(&#192;&#180;&#212;&#180;&#215;&#214;&#181;&#228;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="changdi" type="string">
+            <column name="Changdi" length="50">
+                <comment>&#179;&#161;&#181;&#216;&#163;&#168;0 &#185;&#171;&#194;&#183; 1&#212;&#189;&#210;&#176; 2 &#212;&#203;&#182;&#175;</comment>
+            </column>
+        </property>
+        <property name="pgfield" type="string">
+            <column name="pgfield" length="65535">
+                <comment>
+                &#198;&#192;&#185;&#192;&#215;&#214;&#182;&#206;ID(&#192;&#180;&#212;&#180;&#215;&#214;&#182;&#206;&#177;&#237;&#163;&#172;&#182;&#224;&#184;&#246;&#179;&#161;&#181;&#216;&#161;&#176;|&#161;&#177;&#183;&#214;&#184;&#244;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

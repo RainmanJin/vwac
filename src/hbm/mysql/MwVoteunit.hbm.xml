@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 23, 2016 11:15:36 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.ecannetwork.dto.tech.MwVoteunit" table="mw_voteunit">
+        <id name="id" type="string">
+            <column name="N_SubId" />
+            <generator class="identity" />
+        </id>
+        <property name="NSysId" type="java.lang.Integer">
+            <column name="N_SysId" />
+        </property>
+        <property name="CSubTitle" type="string">
+            <column name="C_SubTitle" />
+        </property>
+        <property name="NOrderId" type="java.lang.Integer">
+            <column name="N_OrderId" />
+        </property>
+        <property name="NNeed" type="java.lang.Integer">
+            <column name="N_Need" />
+        </property>
+        <property name="parentid" type="java.lang.Integer">
+            <column name="Parentid">
+                <comment>&#184;&#184;&#188;&#182;</comment>
+            </column>
+        </property>
+        <property name="colpath" type="string">
+            <column name="Colpath" length="200">
+                <comment>&#202;&#247;&#208;&#206;&#163;&#168;0&#163;&#172;1&#163;&#172;2</comment>
+            </column>
+        </property>
+        <property name="NType" type="java.lang.Integer">
+            <column name="N_Type" />
+        </property>
+    </class>
+</hibernate-mapping>

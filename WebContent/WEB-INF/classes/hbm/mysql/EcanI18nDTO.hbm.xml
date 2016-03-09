@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.ecannetwork.dto.core.EcanI18nDTO"
+		table="ECAN_I18N">
+		<comment>i18n</comment>
+		<id name="id" type="java.lang.String">
+			<column name="ID" length="20" />
+			<generator class="assigned"></generator>
+		</id>
+
+		<property name="name" type="java.lang.String">
+			<column name="NAME" length="20">
+				<comment>名称</comment>
+			</column>
+		</property>
+
+		<property name="content" type="java.lang.String">
+			<column name="CONTENT">
+				<comment>内容</comment>
+			</column>
+		</property>
+
+		<property name="status" type="java.lang.String">
+			<column name="STATUS" length="10">
+				<comment>状态</comment>
+			</column>
+		</property>
+
+		<property name="remark" type="java.lang.String">
+			<column name="REMARK">
+				<comment>备注</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

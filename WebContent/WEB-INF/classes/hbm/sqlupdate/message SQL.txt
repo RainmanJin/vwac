@@ -1,0 +1,48 @@
+﻿update ecan_app set id='1011' ,LEVEL_CODE='10111011' where APP_NAME='i18n.appname.mdttln';
+update ecan_auth set app_id='1011' where id='10010';
+
+INSERT INTO `ecan_app` VALUES ('1012', 'i18n.appname.message', 'message', '10111012', '消息管理', 'index', '0', null, '5');
+
+INSERT INTO `ecan_auth` VALUES ('10012', 'admin', '1012');
+
+INSERT INTO `ecan_domain` VALUES ('1', 'MESSAGE STATUS ', 'MESSAGE_STATUS');
+INSERT INTO `ecan_domain` VALUES ('1', 'MESSAGE TYPE', 'MESSAGE_TYPE');
+INSERT INTO `ecan_domain` VALUES ('1', 'MESSAGE PUSH FLAG', 'MESSAGE_PUSH_FLAG');
+
+INSERT INTO `ecan_domainvalue` VALUES ('8a8c80f44ed873de014ed88ad3080005', '0', '_T_:40288a654ee487f4014ee489978f0014', 'MESSAGE_STATUS', 'R', null, '');
+INSERT INTO `ecan_domainvalue` VALUES ('8a8c80f44ed873de014ed88ad31c0006', '1', '_T_:40288a654ee487f4014ee48997960015', 'MESSAGE_STATUS', 'U', null, '');
+INSERT INTO `ecan_domainvalue` VALUES ('8a8c80f44ed92050014ed920b0550004', '0', '_T_:8a8c80f44ed92050014ed921f49b000a', 'MESSAGE_TYPE', 'S', null, '');
+INSERT INTO `ecan_domainvalue` VALUES ('8a8c80f44ed92050014ed920b04f0003', '0', '_T_:8a8c80f44ed92050014ed921f4a1000b', 'MESSAGE_TYPE', 'D', null, '');
+INSERT INTO `ecan_domainvalue` VALUES ('663d6c430496446a96b658ea1f8891f9', '0', '_T_:070cc3b5807f4e8281968105e1accf0f', 'MESSAGE_PUSH_FLAG', '0', null, '');
+INSERT INTO `ecan_domainvalue` VALUES ('00f866e2bf144c65b27219d1087d2ede', '1', '_T_:00f866e2bf144c65b27219d1087d2ede', 'MESSAGE_PUSH_FLAG', '1', null, '');
+
+INSERT INTO `ecan_i18n_properties` VALUES ('mess001', 'en', 'message manage', 'i18n.appname.message', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mess002', 'zh_CN', '消息管理', 'i18n.appname.message', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mess003', 'en', 'mess title', 'i18n.message.title', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mess004', 'zh_CN', '消息标题', 'i18n.message.title', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mess005', 'en', 'mess content', 'i18n.message.content', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mess006', 'zh_CN', '消息内容', 'i18n.message.content', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mess007', 'en', 'mess status', 'i18n.message.status', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mess008', 'zh_CN', '消息状态', 'i18n.message.status', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mess009', 'en', 'mess type', 'i18n.message.type', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mess010', 'zh_CN', '消息类型', 'i18n.message.type', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mess011', 'en', 'send time', 'i18n.message.sendtime', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mess012', 'zh_CN', '发布时间', 'i18n.message.sendtime', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mess013', 'en', 'sned user', 'i18n.message.senduser', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mess014', 'zh_CN', '发送人员', 'i18n.message.senduser', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mess015', 'zh_CN', '已读', '40288a654ee487f4014ee489978f0014', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mess016', 'zh_CN', '未读', '40288a654ee487f4014ee48997960015', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mess017', 'zh_CN', '系统通知', '8a8c80f44ed92050014ed921f49b000a', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mess018', 'zh_CN', '分配任务', '8a8c80f44ed92050014ed921f4a1000b', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mess019', 'en', 'message list', 'i18n.message.list', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mess020', 'zh_CN', '消息列表', 'i18n.message.list', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mess021', 'en', 'add message', 'i18n.message.add', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mess022', 'zh_CN', '新增消息', 'i18n.message.add', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mess023', 'en', 'edit message', 'i18n.message.edit', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mess024', 'zh_CN', '修改消息', 'i18n.message.edit', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mess027', 'zh_CN', '已发布', '00f866e2bf144c65b27219d1087d2ede', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mess028', 'zh_CN', '未发布', '070cc3b5807f4e8281968105e1accf0f', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mess025', 'en', 'allow push', 'i18n.message.pushflag', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mess026', 'zh_CN', '是否发布', 'i18n.message.pushflag', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mess030', 'en', 'batch push', 'i18n.message.button.batchpush', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mess029', 'zh_CN', '批量发布', 'i18n.message.button.batchpush', 'SYSTEM');

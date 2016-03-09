@@ -1,0 +1,126 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Default.master.cs" Inherits="PortalWeb.mw.Default" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>
+		大众汽车学院
+	</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="pragma" content="no-cache" /> 
+    <meta http-equiv="cache-control" content="no-cache" /> 
+    <meta http-equiv="expires" content="0" />
+    
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<link rel="stylesheet" type="text/css" id="lnksh1"  runat="server"/>
+	<link rel="stylesheet" type="text/css" id="lnksh2"  runat="server"/>
+	<link rel="stylesheet" type="text/css"  id="lnksh3"  runat="server" />
+    <link rel="stylesheet" type="text/css"  id="lnksh6"  runat="server" />
+	<script type="text/javascript" src="<%=BaseUi.JqueryPath %>/jquery.min.js"></script>
+    <script type="text/javascript" src="<%=BaseUi.JqueryPath %>/layer/layer.min.js"></script>
+    <script type="text/javascript" src="<%=BaseUi.CoreJsPath %>/common.js"></script>
+	<link rel="stylesheet" type="text/css"  id="lnksh5"  runat="server"/>
+    <script type="text/javascript" src="<%=BaseUi.JqueryPath %>/jquery.autocomplete/jquery.autocomplete.js"></script>
+    <script type="text/javascript" src="<%=BaseUi.CtxPath %>/platform/My97DatePicker/WdatePicker.js"></script>
+    
+    <script>
+        document.title = "大众汽车学院";
+        $(document).ready(function () {
+            initForm(".form");
+        });
+
+        function changeLang(lang) {
+            //location.href="${ctxPath}/?_LANG=" + lang;
+            var uri = location.href;
+            uri = uri.replace("#nogo", "");
+            if (uri.indexOf("?") == -1) {
+                location.href = uri + "?_LANG=" + lang;
+            } else {
+                location.href = uri + "&_LANG=" + lang;
+            }
+        }
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        #table2{ margin-top: -265px;}
+        #contentwrapper{ float: none;}
+        #content_left{ width: 200px;margin-left: -6px;padding-left: 15px;}
+        #content_right{ width: 720px;}
+        #menu{ overflow: hidden;}
+    </style>
+</head>
+<body>
+    
+<div id="loading">
+	<div class="text">
+		Loadding ... ...
+	</div>
+</div>
+<div id="bd"><!-- #bd will be closed at footer -->
+	<!-- 顶部logo等 -->
+	<div id="top">
+		<div>
+			<div style="margin-top:46px;float: left; margin-left: 47px; font-size: 28px; font-weight: bold;">
+				<img src="<%=BaseUi.ImgPath %>/title_<%=BaseUi.lang %>.png" />
+			</div>
+			<div style="width:47px; float: right; margin-top: 35px; margin-right: 47px;"><img src="<%=BaseUi.CtxPath %>/images/logo.jpg" alt="logo" /></div>
+		</div>
+	</div>
+<div id="banner" style="background: url('<%=BaseUi.ImgPath %>/banner_<%=BaseUi.homeurl %>.jpg');"></div>
+    <form id="dofrm" runat="server">
+<div id="menu">
+				<ul>
+				    <asp:Literal runat="server" ID="litTopMenu"></asp:Literal>
+					<%=GetDmpurl() %>
+					<%--<li>
+						<a href="/mw/?token=<%=BaseUi.token %>&uid=<%=BaseUi.uid %>&lang=<%=BaseUi.lang %>">测试</a>
+					</li>--%>
+					<li class="userinfo">
+						<span>&nbsp;</span>
+						<span>
+						    <asp:DropDownList runat="server" ID="drplang"/>
+							&nbsp;
+						</span>
+						<span><a href="<%=BaseUi.CtxPath %>/p/logout"><%=BaseUi.GetLang("i18n.logout") %></a></span>
+					</li>
+				</ul>
+			</div>
+
+<div class="centerbody centerbox">
+    <div id="contentwrapper">
+        <div id="content_left">
+		<div class="sidebar">
+			<ul class="listMenu">
+			    <asp:Literal runat="server" ID="litLeftMenu"></asp:Literal>
+			</ul>
+		</div>
+</div>
+	<!--中间内容-->
+        <div id="content_right">
+     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+        </div>
+         <div class="clearfix_b"></div>
+   </div>
+    
+</div>
+        </form>
+<div id="footer">
+	<ul>
+		<li>&copy;Volkswagen 2011</li>
+		<li><a href="#nogo">联系我们</a></li>
+		<li><a href="#nogo">版权声明</a></li>
+		<li><a href="#nogo">京ICP备05030299</a></li>
+		<li><a href="#nogo">VOKSWAGEN AG</a></li>
+		<li><a href="#nogo">Volkswagen International</a></li>
+	</ul>
+</div>
+</div>
+    <!-- #bd close -->
+
+</body>
+</html>

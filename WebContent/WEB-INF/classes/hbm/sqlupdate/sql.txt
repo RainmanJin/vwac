@@ -1,0 +1,37 @@
+INSERT INTO `ecan_app` VALUES ('1010', 'i18n.appname.mdttln', 'mdttln', '10111010', '学习任务', 'index', '0', null, '4');
+
+INSERT INTO `ecan_auth` VALUES ('10010', 'admin', '1010');
+
+INSERT INTO `ecan_domain` VALUES ('1', 'MDTT LN STATUS', 'MDTT_LN_STATUS');
+
+
+INSERT INTO `ecan_domainvalue` VALUES ('a014d81eb25f408a80143d6cd19c5dfd', '0', '_T_:527e1a4da7f94a09b59be0ef78ff8dce', 'MDTT_LN_STATUS', '0', null, '');
+INSERT INTO `ecan_domainvalue` VALUES ('c398eaf089f14d9f9a801748819e6d1e', '1', '_T_:3e57975c411f4169bdb1912287ab5758', 'MDTT_LN_STATUS', '1', null, '');
+INSERT INTO `ecan_domainvalue` VALUES ('e3950fac02534e8ba7f3667c5cd8f174', '2', '_T_:dfdf5eab242b4d84819b68d65690bc73', 'MDTT_LN_STATUS', '2', null, '');
+
+
+INSERT INTO `ecan_i18n_properties` VALUES ('A1123123129', 'en', 'Learning', 'i18n.appname.mdttln', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mdtt0061', 'en', 'Learning list', 'i18n.mdttln.title', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('A1123123130', 'zh_CN', '学习任务', 'i18n.appname.mdttln', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mdtt0062', 'zh_CN', '学习任务', 'i18n.mdttln.title', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mdtt0063', 'en', 'task title', 'i18n.mdttln.tasktitle', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mdtt0064', 'zh_CN', '任务标题', 'i18n.mdttln.tasktitle', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mdtt0065', 'en', 'task style', 'i18n.mdttln.taskstyle', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mdtt0066', 'zh_CN', '任务类型', 'i18n.mdttln.taskstyle', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mdtt0067', 'en', 'start time', 'i18n.mdttln.taskstart', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mdtt0068', 'zh_CN', '开始时间', 'i18n.mdttln.taskstart', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mdtt0069', 'en', 'end time', 'i18n.mdttln.taskend', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mdtt0070', 'zh_CN', '结束时间', 'i18n.mdttln.taskend', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mdtt0071', 'en', 'disuser', 'i18n.mdttln.taskuser', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mdtt0072', 'zh_CN', '分配人员', 'i18n.mdttln.taskuser', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mdtt0073', 'en', 'courseware', 'i18n.mdttln.taskcour', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mdtt0074', 'zh_CN', '课件', 'i18n.mdttln.taskcour', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('18c80114e213422eba34b86ca303550e', 'zh_CN', '学习任务', '527e1a4da7f94a09b59be0ef78ff8dce', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('325c85ffadc4420f92827f52e41e9ecd', 'zh_CN', '考试任务', '3e57975c411f4169bdb1912287ab5758', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('0fed7e6940304cee8876781cf1d1befc', 'zh_CN', '调查任务', 'dfdf5eab242b4d84819b68d65690bc73', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mdtt0075', 'en', 'next', 'i18n.mdttln.button.savenext', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mdtt0076', 'zh_CN', '下一页', 'i18n.mdttln.button.savenext', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mdtt0077', 'en', 'push', 'i18n.mdttln.button.savepush', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mdtt0078', 'zh_CN', '发布', 'i18n.mdttln.button.savepush', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mdtt0079', 'en', 'course name', 'i18n.mdttln.coursename', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mdtt0080', 'zh_CN', '课件名称', 'i18n.mdttln.coursename', 'SYSTEM');

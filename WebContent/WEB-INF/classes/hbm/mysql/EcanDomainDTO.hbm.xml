@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.ecannetwork.dto.core.EcanDomainDTO"
+		table="ECAN_DOMAIN">
+		<comment>域</comment>
+		<id name="id" type="java.lang.String">
+			<column name="ID" length="32" />
+			<generator class="assigned" />
+		</id>
+
+		<property name="canmodify" type="java.lang.String">
+			<column name="CANMODIFY" length="1">
+				<comment>可修改</comment>
+			</column>
+		</property>
+
+		<property name="remark" type="java.lang.String">
+			<column name="REMARK" length="100">
+				<comment>描述</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

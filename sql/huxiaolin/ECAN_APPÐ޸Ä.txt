@@ -1,0 +1,8 @@
+UPDATE `ecan_app` SET `FUN_CODE`='index' WHERE (`ID`='8005')
+UPDATE `ecan_app` SET `FUN_CODE`='index' WHERE (`ID`='8110')
+INSERT INTO `ecan_tech`.`ecan_app` (`ID`, `APP_NAME`, `APP_CODE`, `LEVEL_CODE`, `FUN_NAME`, `FUN_CODE`, `IS_OUTSIDE`, `OUTSIDE_URL`, `IDX`) VALUES ('8110', 'i18n.appname.mw.b8', 'b8', '10111008', NULL, '', '0', 'mw', '12');
+INSERT INTO `ecan_tech`.`ecan_app` (`ID`, `APP_NAME`, `APP_CODE`, `LEVEL_CODE`, `FUN_NAME`, `FUN_CODE`, `IS_OUTSIDE`, `OUTSIDE_URL`, `IDX`) VALUES ('81101', 'i18n.appname.mw.funsystem', 'b8', '101110081001', '', 'index', '0', 'mw', '1');
+INSERT INTO `ecan_tech`.`ecan_app` (`ID`, `APP_NAME`, `APP_CODE`, `LEVEL_CODE`, `FUN_NAME`, `FUN_CODE`, `IS_OUTSIDE`, `OUTSIDE_URL`, `IDX`) VALUES ('81102', 'i18n.appname.mw.competition', 'b8', '101110081002', NULL, 'competition', '0', 'mw', '2');
+INSERT INTO `ecan_tech`.`ecan_i18n_properties` (`ID`, `LANG_TYPE`, `TEXT_VALUE`, `PROPERTY_ID`, `APP_ID`) VALUES ('sys1008', 'zh_CN', '迈腾B8对比数据', 'i18n.appname.mw.b8', 'SYSTEM');
+INSERT INTO `ecan_tech`.`ecan_i18n_properties` (`ID`, `LANG_TYPE`, `TEXT_VALUE`, `PROPERTY_ID`, `APP_ID`) VALUES ('sys1009', 'zh_CN', '娱乐信息系统', 'i18n.appname.mw.funsystem', 'SYSTEM');
+INSERT INTO `ecan_tech`.`ecan_i18n_properties` (`ID`, `LANG_TYPE`, `TEXT_VALUE`, `PROPERTY_ID`, `APP_ID`) VALUES ('sys1010', 'zh_CN', '竞品对比', 'i18n.appname.mw.competition', 'SYSTEM');

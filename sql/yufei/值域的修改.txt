@@ -1,0 +1,8 @@
+-- 增加是否使用下拉列表值
+     
+insert into ECAN_DOMAIN set canmodify=0,remark='是否使用',id='SFSY';
+     
+insert into ecan_domainvalue set id='42347a53a81840d013abaca216c002b',indexsequnce=0,domainlabel='是',domain_id='SFSY',value='1';
+
+insert into ecan_domainvalue set id='423347a53a81840d013abaca216c002b',indexsequnce=1,domainlabel='否',
+domain_id='SFSY',value='0';

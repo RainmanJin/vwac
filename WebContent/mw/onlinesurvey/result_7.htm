@@ -1,0 +1,56 @@
+﻿<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" href="/mw/onlinesurvey/css/style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>第五届大众汽车中国培训执委会调查问卷 The 5th Volkswagen China Training Committee Online Survey Result</title>
+<script type="text/javascript">
+var voteid='{voteid}';
+ function goback()
+ {
+     //if (voteid != "") {
+//         window.location.href = voteid + ".html";
+//     }
+//     else {
+//         window.history.go(-1);
+//     }
+    window.location.href="/onlinefeedback/";
+	//CloseWebPage();
+ }
+ function CloseWebPage(){
+  if (navigator.userAgent.indexOf("MSIE") > 0) {
+   if (navigator.userAgent.indexOf("MSIE 6.0") > 0) {
+    window.opener = null;
+    window.close();
+   } else {
+    window.open('', '_top');
+    window.top.close();
+   }
+  }
+  else if (navigator.userAgent.indexOf("Firefox") > 0) {
+   window.location.href = 'about:blank ';
+  } else {
+   window.opener = null;
+   window.open('', '_self', '');
+   window.close();
+  }
+ }
+</script>
+</head>
+
+<body>
+<div class="main">
+  <div class="top"><img src="/mw/onlinesurvey/images/top.jpg"/></div>
+  <div class="mid"></div>
+  <div class="finish">
+  <p>您的意见对我们非常重要。感谢您的支持与配合！</p>
+  <p>Your feedback is incredibly valuable to us! Thank you for your nice support!</p>
+  </div>
+  <div class="btns">
+    <a href="javascript:;" onclick="goback();">返回</a>
+  </div>
+  <div class="bottom"><!--<img src="/mw/onlinesurvey/images/vwac.png"/>--></div>
+</div>
+</body>
+</html>

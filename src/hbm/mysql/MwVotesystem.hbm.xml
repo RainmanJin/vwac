@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 23, 2016 11:15:36 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="com.ecannetwork.dto.tech.MwVotesystem" table="mw_votesystem">
+		<id name="id" type="string"><!--原来类型为：java.lang.Integer，修改为string，为了匹配DtoSupport。实体类中id类型也要修改 
+				名称也做了修改 -->
+			<column name="N_SysId" />
+			<generator class="identity" />
+		</id>
+		<property name="CTitle" type="string">
+			<column name="C_Title" />
+		</property>
+		<property name="NOption" type="java.lang.Integer">
+			<column name="N_Option" />
+		</property>
+		<property name="NPublic" type="java.lang.Integer">
+			<column name="N_Public" />
+		</property>
+		<property name="NPublicStyle" type="java.lang.Integer">
+			<column name="N_PublicStyle" />
+		</property>
+		<property name="dtOverDate" type="timestamp">
+			<column name="DT_OverDate" length="0" />
+		</property>
+		<property name="CIprule" type="string">
+			<column name="C_IPRule" length="16" />
+		</property>
+		<property name="NScoreType" type="java.lang.Byte">
+			<column name="N_ScoreType" />
+		</property>
+		<property name="CReturnUrl" type="string">
+			<column name="C_ReturnUrl" />
+		</property>
+		<property name="CLogicRule" type="string">
+			<column name="C_LogicRule" />
+		</property>
+		<property name="NLogicType" type="java.lang.Byte">
+			<column name="N_LogicType" />
+		</property>
+		<property name="NCodeSurvey" type="java.lang.Integer">
+			<column name="N_CodeSurvey" />
+		</property>
+		<property name="NLogicSurvey" type="java.lang.Integer">
+			<column name="N_LogicSurvey" />
+		</property>
+		<property name="NIphour" type="java.lang.Integer">
+			<column name="N_IPHour" />
+		</property>
+		<property name="NCycNum" type="java.lang.Integer">
+			<column name="N_CycNum" />
+		</property>
+		<property name="NRflag" type="java.lang.Integer">
+			<column name="N_RFlag" />
+		</property>
+		<property name="CCycNum" type="string">
+			<column name="C_CycNum" length="200" />
+		</property>
+		<property name="CRflag" type="string">
+			<column name="C_RFlag" length="200" />
+		</property>
+		<property name="NIprecord" type="java.lang.Integer">
+			<column name="N_IPRecord" />
+		</property>
+		<property name="dtStartDate" type="timestamp">
+			<column name="DT_StartDate" length="0" />
+		</property>
+		<property name="CTearcher" type="string">
+			<column name="C_Tearcher" />
+		</property>
+		<property name="CAdrees" type="string">
+			<column name="C_Adrees" />
+		</property>
+		<property name="CCode" type="string">
+			<column name="C_Code" />
+		</property>
+	</class>
+</hibernate-mapping>

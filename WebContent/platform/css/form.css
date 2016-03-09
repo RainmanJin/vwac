@@ -1,0 +1,331 @@
+
+/*========================================form===============================================*/
+.form{
+	padding: 5px;
+	margin-left: 20px;
+}
+.form em{
+	color: red;
+	float: left;
+	font-weight: bold;
+	height: 26px;
+	line-height: 26px;
+	padding-left: 3px;
+}
+.form li{
+	margin: 0px 0px 6px 0px;
+	height: 26px;
+}
+.form .gray{
+	background: #f0f0f0;
+}
+.form li label{
+	width: 160px;
+	float: left;
+	text-align: right;
+	float: left;
+	padding: 3px 10px 3px 0;
+}
+.form input{
+	float: left;
+	padding: 1px 3px;
+	text-align: left;
+	float: left;
+	width: 140px;
+	height: 21px;
+	line-height: 21px;
+	background-color: #fff;
+	border: 1px inset #dedede;
+}
+
+.form input.native{
+	float: none;
+	padding: auto;
+	text-align: auto;
+	width: auto;
+	height: auto;
+	line-height: auto;
+	background-color: #fff;
+	border: auto;
+}
+
+.form input.min{
+	width: 12px;
+	height: 12px;
+	border: none;
+}
+.form input.num{
+	width: 42px;
+}
+.form input.max{
+	width: 500px;
+}
+input.focus{
+	border-color: #777777;
+	background-color: #FFFACD;
+}
+.form select{
+	float: left;
+}
+
+.form textarea{
+	float: left;
+	padding: 1px 3px;
+	text-align: left;
+	float: left;
+	width: 350px;
+	height: 42px;
+	line-height: 21px;
+	background-color: #fff;
+	border: 1px inset #DEDEDE;
+}
+.form .error textarea{
+	background: url("../images/form/invalid_line.gif") repeat-x scroll left bottom;
+	padding:2px 3px 0px 3px;
+	background-color: #fff;
+}
+
+textarea.focus{
+	border-color: #777;
+	background-color: #FFFACD;
+}
+
+
+.form li span{
+	float: left;
+}
+.form li span.label{
+	margin-right: 30px;
+}
+
+.form li span.info{
+	color: #C0C0C0;
+	height: 25px;
+	line-height: 25px;
+}
+
+.form li span.msg{
+	color: red;
+	display: none;
+	height: 25px;
+	line-height: 25px;
+}
+
+.form li.error input{
+	padding:2px 3px 0px 3px;
+	background-color: #FA8072;
+}
+.form li.error span.info{
+	display: none;
+}
+.form li.error span.msg{
+	display: block;
+	padding-left: 19px;
+	margin-left:3px;
+	background: url("../images/form/exclamation.gif") no-repeat;
+}
+.form .btns{
+	clear: both;
+	margin:20px 0px 0px 160px;
+}
+button{
+	background:url("../images/btn_bg.gif") repeat-x scroll left top transparent;
+	border: 1px outset #CCCCCC;
+	color: #666666;
+	cursor: pointer;
+	font-weight: bold;
+	padding: 2px 6px;
+}
+
+.form fieldset{
+	border-color:#CCCCCC;
+	border-right:medium none #CCCCCC;
+	border-style:solid none none;
+	border-width:1px medium medium;
+	margin: 3px 0;
+	display: inline;
+}
+.form fieldset legend{
+	color: #003366;
+	font-weight:bold;
+	font-size: 13px;
+	padding-left: 20px;
+}
+.form fieldset ul{
+	margin-top: 20px;
+}
+
+/*ajax response support*/
+div.response{
+	text-align: left;
+	font-weight: bold;
+	display: none;
+	padding: 10px 0 10px 40px;
+	font-size: 13px;
+}
+div.succ{
+	color: green;
+	display: block;
+	background: url("../images/icons/32x32/status/dialog-information.png") no-repeat left center;
+	border: 1px solid #d0d0d0;
+	margin-bottom: 10px;
+}
+div.failure{
+	color: red;
+	display: block;
+	background: url("../images/icons/32x32/status/dialog-warning.png") no-repeat left center;
+	border: 1px solid #d0d0d0;
+	margin-bottom: 10px;
+}
+
+input.normal{
+	width: 152px;
+	height: 20px;
+	border: 1px inset #EAEAEA; 
+}
+/*========================================form    end========================================*/
+
+
+
+/*=======================================.treeform===============================================*/
+.treeform{
+	padding: 5px;
+	margin-left: 20px;
+}
+.treeform em{
+	color: red;
+	float: left;
+	font-weight: bold;
+	height: 26px;
+	line-height: 26px;
+	padding-left: 3px;
+}
+.treeform li{
+	margin: 0px 0px 6px 0px;
+	height: 10px;
+}
+.treeform .gray{
+	background: #f0f0f0;
+}
+/*
+.treeform li label{
+	width: 160px;
+	float: left;
+	text-align: right;
+	float: left;
+	padding: 3px 10px 3px 0;
+}
+
+.treeform input{
+	float: left;
+	padding: 1px 3px;
+	text-align: left;
+	float: left;
+	width: 140px;
+	height: 21px;
+	line-height: 21px;
+	background-color: #fff;
+	border: 1px inset #dedede;
+}*/
+
+.treeform input.native{
+	float: none;
+	padding: auto;
+	text-align: auto;
+	width: auto;
+	height: auto;
+	line-height: auto;
+	background-color: #fff;
+	border: auto;
+}
+
+.treeform input.min{
+	width: 12px;
+	height: 12px;
+	border: none;
+}
+.treeform input.num{
+	width: 42px;
+}
+.treeform input.max{
+	width: 500px;
+}
+
+.treeform select{
+	float: left;
+}
+
+.treeform textarea{
+	float: left;
+	padding: 1px 3px;
+	text-align: left;
+	float: left;
+	width: 350px;
+	height: 42px;
+	line-height: 21px;
+	background-color: #fff;
+	border: 1px inset #DEDEDE;
+}
+.treeform .error textarea{
+	background: url("../images.treeform/invalid_line.gif") repeat-x scroll left bottom;
+	padding:2px 3px 0px 3px;
+	background-color: #fff;
+}
+
+.treeform li span{
+	float: left;
+}
+.treeform li span.label{
+	margin-right: 30px;
+}
+
+.treeform li span.info{
+	color: #C0C0C0;
+	height: 25px;
+	line-height: 25px;
+}
+
+.treeform li span.msg{
+	color: red;
+	display: none;
+	height: 25px;
+	line-height: 25px;
+}
+
+.treeform li.error input{
+	padding:2px 3px 0px 3px;
+	background-color: #FA8072;
+}
+.treeform li.error span.info{
+	display: none;
+}
+.treeform li.error span.msg{
+	display: block;
+	padding-left: 19px;
+	margin-left:3px;
+	background: url("../images.treeform/exclamation.gif") no-repeat;
+}
+.treeform .btns{
+	clear: both;
+	margin:20px 0px 0px 160px;
+}
+
+.treeform fieldset{
+	border-color:#CCCCCC;
+	border-right:medium none #CCCCCC;
+	border-style:solid none none;
+	border-width:1px medium medium;
+	margin: 3px 0;
+	display: inline;
+}
+.treeform fieldset legend{
+	color: #003366;
+	font-weight:bold;
+	font-size: 13px;
+	padding-left: 20px;
+}
+.treeform fieldset ul{
+	margin-top: 20px;
+}
+
+/*=======================================.treeform    end========================================*/

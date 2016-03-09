@@ -1,0 +1,42 @@
+INSERT INTO `ecan_app` VALUES ('1013', 'i18n.appname.messtype', 'messtype', '10111013', '消息类型管理', 'index', '0', null, '6');
+INSERT INTO `ecan_app` VALUES ('1014', 'i18n.appname.tagmanage', 'contenttag', '10111014', '标签管理', 'index', '0', null, '7');
+
+INSERT INTO `ecan_auth` VALUES ('10013', 'admin', '1013');
+INSERT INTO `ecan_auth` VALUES ('10014', 'admin', '1014');
+
+
+INSERT INTO `ecan_domain` VALUES ('1', 'TYPE DELETE FLAG', 'TYPE_DELETE_FLAG');
+
+
+INSERT INTO `ecan_domainvalue` VALUES ('b2c9dc470b344bedb6307bd5c864ac07', '0', '_T_:2790bf88b4f64c89a70ba1dac0b759b9', 'TYPE_DELETE_FLAG', '0', null, '');
+INSERT INTO `ecan_domainvalue` VALUES ('f35d307daf4c4fab891686c11a348e4e', '1', '_T_:8fc823bd8e0e433eadf6615efac1e1dd', 'TYPE_DELETE_FLAG', '1', null, '');
+
+
+INSERT INTO `ecan_i18n_properties` VALUES ('messtype001', 'en', 'message type manage', 'i18n.appname.messtype', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('messtype002', 'zh_CN', '消息类型管理', 'i18n.appname.messtype', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('messtype006', 'zh_CN', '类型名称', 'i18n.appname.typename', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('messtype005', 'en', 'type name', 'i18n.appname.typename', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('messtype004', 'zh_CN', '消息类型列表', 'i18n.appname.typetile', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('messtype003', 'en', 'message type', 'i18n.appname.typetile', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('messtype008', 'zh_CN', '类型代码', 'i18n.appname.typecode', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('messtype007', 'en', 'type code', 'i18n.appname.typecode', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('messtype010', 'zh_CN', '不允许删除', '2790bf88b4f64c89a70ba1dac0b759b9', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('messtype009', 'zh_CN', '允许删除', '8fc823bd8e0e433eadf6615efac1e1dd', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('messtype011', 'en', 'type delete flag', 'i18n.appname.typedflag', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('messtype012', 'zh_CN', '是否允许删除', 'i18n.appname.typedflag', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('tag001', 'en', 'tag manage', 'i18n.appname.tagmanage', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('tag002', 'zh_CN', '标签管理', 'i18n.appname.tagmanage', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mdtt0081', 'en', 'system type', 'i18n.mdttln.systype', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('mdtt0082', 'zh_CN', '系统类型', 'i18n.mdttln.systype', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('tag003', 'en', 'main tag', 'i18n.tag.mainname', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('tag004', 'zh_CN', '主标签名称', 'i18n.tag.mainname', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('tag005', 'en', 'children tag', 'i18n.tag.childname', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('tag006', 'zh_CN', '子标签名称', 'i18n.tag.childname', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('tag007', 'en', 'add main tag', 'i18n.button.addmaintag', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('tag008', 'zh_CN', '添加主标签', 'i18n.button.addmaintag', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('tag009', 'en', 'tag list', 'i18n.appname.tag.title', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('tag010', 'zh_CN', '标签列表', 'i18n.appname.tag.title', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('tag011', 'en', 'edit child tag', 'i18n.button.editchildtag', 'SYSTEM');
+INSERT INTO `ecan_i18n_properties` VALUES ('tag012', 'zh_CN', '编辑子标签', 'i18n.button.editchildtag', 'SYSTEM');
+
+

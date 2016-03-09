@@ -1,0 +1,1 @@
+<input type="text" name="${name!}" value="${date!}" class="Wdate ${class!}" readonly="readonly" onclick="WdatePicker({lang:'${lang}'})" v="${v!}" id="${id!}" />

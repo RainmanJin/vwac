@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.ecannetwork.dto.tech.TechChildrenTag" table="ECAN_CHILDREN_TAG">
+			<id name="id" type="java.lang.String">
+					<column name="ID" />
+					<generator class="uuid.hex" />
+			</id>
+			<property name="ctagName" type="java.lang.String">
+					<column name="CTAG_NAME" />
+			</property>
+			<property name="mainId" type="java.lang.String">
+					<column name="MAIN_ID" />
+			</property>
+				<many-to-one class="com.ecannetwork.dto.tech.TechContentTag" name="mainTag" column="MAIN_ID"  insert="false" update="false" fetch="join"/>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.ecannetwork.dto.tech.TechTestActivePointIndex"
+		table="TECH_TEST_ACTIVE_POINT_INDEX">
+		<id name="id" type="java.lang.String">
+			<column name="ID" length="32" />
+			<generator class="uuid.hex" />
+		</id>
+		<property name="dimension" type="java.lang.String">
+			<column name="DIMENSION" length="32" />
+		</property>
+		<property name="proType" type="java.lang.String">
+			<column name="PRO_TYPE" length="32" />
+		</property>
+		<property name="point" type="java.lang.Double">
+			<column name="POINT" precision="10" />
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,1 @@
+Hello, your training course information has been updated

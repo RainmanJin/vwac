@@ -1,0 +1,57 @@
+﻿<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" href="/mw/onlinesurvey/css/style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>大众汽车学院培训评估问卷</title>
+<script type="text/javascript">
+var voteid='{voteid}';
+ function goback()
+ {
+     if (voteid != "") {
+         window.location.href = voteid + ".html";
+     }
+     else {
+         window.history.go(-1);
+     }
+	 //CloseWebPage();
+ }
+ function CloseWebPage(){
+  if (navigator.userAgent.indexOf("MSIE") > 0) {
+   if (navigator.userAgent.indexOf("MSIE 6.0") > 0) {
+    window.opener = null;
+    window.close();
+   } else {
+    window.open('', '_top');
+    window.top.close();
+   }
+  }
+  else if (navigator.userAgent.indexOf("Firefox") > 0) {
+   window.location.href = 'about:blank ';
+  } else {
+   window.opener = null;
+   window.open('', '_self', '');
+   window.close();
+  }
+ }
+</script>
+</head>
+
+<body>
+<div class="main">
+  <div class="top"><img src="/mw/onlinesurvey/images/top.jpg"/></div>
+  <div class="mid"></div>
+  <div class="finish">
+ <p> Thank you for your cooperation and valuable comments. Your feedback is very important for us to pursue the best training as always. Further information about our training programs, please access to <a href="http://www.group-training-online.com">GTO</a>.</p>
+
+<p>感谢您的配合和宝贵意见。您的建议是我们致力于提升培训质量的重要参考。如果您要了解我们的培训安排，请访问<a href="http://www.group-training-online.com">GTO</a>。</p>
+
+  </div>
+  <div class="btns">
+    <a href="javascript:;" onclick="goback();">返回</a>
+  </div>
+  <div class="bottom"><img src="/mw/onlinesurvey/images/vwac.png"/></div>
+</div>
+</body>
+</html>

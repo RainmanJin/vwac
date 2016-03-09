@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.ecannetwork.dto.core.EcanDomainvalueDTO"
+		table="ECAN_DOMAINVALUE">
+		<comment>域值</comment>
+		<id name="id" type="java.lang.String">
+			<column name="ID" length="32" />
+			<generator class="uuid.hex" />
+		</id>
+
+		<property name="indexsequnce" type="java.lang.Long">
+			<column name="INDEXSEQUNCE" length="4">
+				<comment>显示次序</comment>
+			</column>
+		</property>
+
+		<property name="domainlabel" type="com.ecannetwork.core.i18n.I18nTypeString">
+			<column name="DOMAINLABEL">
+				<comment>分类管理中的分类名称</comment>
+			</column>
+		</property>
+
+		<property name="domainId" type="java.lang.String">
+			<column name="DOMAIN_ID" length="32">
+				<comment>域编号</comment>
+			</column>
+		</property>
+
+		<property name="domainvalue" type="java.lang.String">
+			<column name="VALUE" length="60">
+				<comment>值</comment>
+			</column>
+		</property>
+
+		<property name="domainLevel" type="java.lang.String">
+			<column name="DOMAINLEVEL" length="60">
+				<comment>级别</comment>
+			</column>
+		</property>
+		<property name="isDelete" type="java.lang.String">
+			<column name="IS_DELETE">
+				<comment>是否删除</comment>
+			</column>
+		</property>
+		
+		
+
+	</class>
+</hibernate-mapping>

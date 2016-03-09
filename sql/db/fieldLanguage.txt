@@ -1,0 +1,132 @@
+-- 缩略图
+insert into ecan_i18n_properties values ('app01','zh_CN','缩略图','i18n.app.Thumbnails','SYSTEM');
+
+insert into ecan_i18n_properties values ('app02','en','Thumbnails','i18n.app.Thumbnails','SYSTEM');
+-- 标识
+insert into ecan_i18n_properties values ('app03','zh_CN','标识','i18n.app.Mark','SYSTEM');
+
+insert into ecan_i18n_properties values ('app04','en','Mark','i18n.app.Mark','SYSTEM');
+
+insert into ecan_i18n_properties values ('info01','zh_CN','分类名称','i18n.app.categoryname','SYSTEM');
+
+
+insert into ecan_i18n_properties values ('info02','en','Category Name','i18n.app.categoryname','SYSTEM');
+
+
+insert into ecan_i18n_properties values ('info03','zh_CN','录入日期','i18n.app.entrydate','SYSTEM');
+
+
+insert into ecan_i18n_properties values ('info04','en','Entry Date','i18n.app.entrydate','SYSTEM');
+insert into ecan_i18n_properties values ('info05','zh_CN','标题','i18n.app.title','SYSTEM');
+
+insert into ecan_i18n_properties values ('info06','en','Title','i18n.app.title','SYSTEM');
+
+insert into ecan_i18n_properties values ('info07','zh_CN','跳转链接','i18n.app.hoplinks','SYSTEM');
+
+insert into ecan_i18n_properties values ('info08','en','Hoplinks','i18n.app.hoplinks','SYSTEM');
+
+insert into ecan_i18n_properties values ('info09','zh_CN','封面图','i18n.app.coverart','SYSTEM');
+
+insert into ecan_i18n_properties values ('info10','en','Cover art','i18n.app.coverart','SYSTEM');
+
+insert into ecan_i18n_properties values ('info11','zh_CN','文章内容','i18n.app.article','SYSTEM');
+
+insert into ecan_i18n_properties values ('info12','en','Article Content','i18n.app.article','SYSTEM');
+
+insert into ecan_i18n_properties values ('info13','zh_CN','附件','i18n.app.annex','SYSTEM');
+
+insert into ecan_i18n_properties values ('info14','en','Annex','i18n.app.annex','SYSTEM');
+insert into ecan_i18n_properties values ('vwsurvey01','zh_CN','复制','i18n.app.copy','SYSTEM');
+insert into ecan_i18n_properties values ('vwsurvey02','en','copy','i18n.app.copy','SYSTEM');
+
+insert into ecan_i18n_properties values ('vwsurvey03','zh_CN','生成问卷','i18n.app.generatequestion','SYSTEM');
+
+insert into ecan_i18n_properties values ('vwsurvey04','en','Generation questionnaire','i18n.app.generatequestion','SYSTEM');
+
+insert into ecan_i18n_properties values ('vwsurvey05','zh_CN','发布问卷','i18n.app.postquestion','SYSTEM');
+
+insert into ecan_i18n_properties values ('vwsurvey06','en','Post questionnaire','i18n.app.postquestion','SYSTEM');
+
+insert into ecan_i18n_properties values ('vwsurvey07','zh_CN','培训老师','i18n.app.trainer','SYSTEM');
+
+insert into ecan_i18n_properties values ('vwsurvey08','en','Teacher','i18n.app.trainer','SYSTEM');
+insert into ecan_i18n_properties values ('vwsurvey09','zh_CN','互连网发布地址','i18n.app.postaddress','SYSTEM');
+
+insert into ecan_i18n_properties values ('vwsurvey10','en','Post Address','i18n.app.postaddress','SYSTEM');
+
+insert into ecan_i18n_properties values ('vwsurvey11','zh_CN','二维码发布','i18n.app.dimensional','SYSTEM');
+
+insert into ecan_i18n_properties values ('vwsurvey12','en','Post Two-dimensional code','i18n.app.dimensional','SYSTEM');
+
+insert into ecan_i18n_properties values ('vwsurvey13','zh_CN','站内通行投票代码','i18n.app.sitepasscode','SYSTEM');
+
+insert into ecan_i18n_properties values ('vwsurvey14','en','site pass code','i18n.app.sitepasscode','SYSTEM');
+
+insert into ecan_i18n_properties values ('vwsurvey15','zh_CN','(请复制使用):','i18n.app.copyuse','SYSTEM');
+
+insert into ecan_i18n_properties values ('vwsurvey16','en','site copy use','i18n.app.copyuse','SYSTEM');
+
+insert into ecan_i18n_properties values ('vwsurvey17','zh_CN','(请另存图片):','i18n.app.saveimage','SYSTEM');
+
+insert into ecan_i18n_properties values ('vwsurvey18','en','please save image','i18n.app.saveimage','SYSTEM');
+insert into ecan_i18n_properties values ('vwsurvey19','zh_CN','调查管理新增','i18n.app.newinvestigation','SYSTEM');
+
+insert into ecan_i18n_properties values ('vwsurvey20','en','New Investigation Management','i18n.app.newinvestigation','SYSTEM');
+insert into ecan_i18n_properties values ('vwsurvey21','zh_CN','调查管理编辑','i18n.app.editorinvestigation','SYSTEM');
+
+insert into ecan_i18n_properties values ('vwsurvey22','en','Editor Investigation Management','i18n.app.editorinvestigation','SYSTEM');
+
+insert into ecan_i18n_properties values ('vwsurvey23','zh_CN','培训课程名称','i18n.app.trainingcoursetitle','SYSTEM');
+
+insert into ecan_i18n_properties values ('vwsurvey24','en','Training Course Title','i18n.app.trainingcoursetitle','SYSTEM');
+
+insert into ecan_i18n_properties values ('vwsurvey25','zh_CN','课程开始时间','i18n.app.coursestarttime','SYSTEM');
+
+insert into ecan_i18n_properties values ('vwsurvey26','en','Course Start Time','i18n.app.coursestarttime','SYSTEM');
+insert into ecan_i18n_properties values ('vwsurvey27','zh_CN','课程结束时间','i18n.app.courseendtime','SYSTEM');
+
+insert into ecan_i18n_properties values ('vwsurvey28','en','Course End Time','i18n.app.courseendtime','SYSTEM');
+
+insert into ecan_i18n_properties values ('vwsurvey29','zh_CN','培训地点','i18n.app.trainingsite','SYSTEM');
+
+insert into ecan_i18n_properties values ('vwsurvey30','en','Training Location','i18n.app.trainingsite','SYSTEM');
+
+insert into ecan_i18n_properties values ('vwsurvey31','zh_CN','培训人数','i18n.app.trainingnumber','SYSTEM');
+
+insert into ecan_i18n_properties values ('vwsurvey32','en','The number of trainees','i18n.app.trainingnumber','SYSTEM');
+
+insert into ecan_i18n_properties values ('vwsurvey33','zh_CN','完成跳转地址','i18n.app.compeltejumpaddress','SYSTEM');
+
+insert into ecan_i18n_properties values ('vwsurvey34','en','Complete the jump address','i18n.app.compeltejumpaddress','SYSTEM');
+insert into ecan_i18n_properties values ('vwsurvey35','zh_CN','是否验证','i18n.app.verify','SYSTEM');
+
+insert into ecan_i18n_properties values ('vwsurvey36','en','Verify','i18n.app.verify','SYSTEM');
+
+insert into ecan_i18n_properties values ('vwsurvey37','zh_CN','课程调查码','i18n.app.invescoursecode','SYSTEM');
+
+insert into ecan_i18n_properties values ('vwsurvey38','en','Investigation Course code','i18n.app.invescoursecode','SYSTEM');
+
+insert into ecan_i18n_properties values ('vwsurvey39','zh_CN','调查模版','i18n.app.surveytemplates','SYSTEM');
+
+insert into ecan_i18n_properties values ('vwsurvey40','en','Survey Templates','i18n.app.surveytemplates','SYSTEM');
+insert into ecan_i18n_properties values ('vwsurveyresult01','zh_CN','当前调查问卷有效样本数','i18n.app.effectivesize','SYSTEM');
+insert into ecan_i18n_properties values ('vwsurveyresult02','en','effective sample size','i18n.app.effectivesize','SYSTEM');
+
+insert into ecan_i18n_properties values ('vwsurveyresult03','zh_CN','票数','i18n.app.votes','SYSTEM');
+
+insert into ecan_i18n_properties values ('vwsurveyresult04','en','votes','i18n.app.votes','SYSTEM');
+insert into ecan_i18n_properties values ('vwsurveyresult05','zh_CN','分析结果','i18n.app.analysisresult','SYSTEM');
+
+insert into ecan_i18n_properties values ('vwsurveyresult06','en','Analysis of results','i18n.app.analysisresult','SYSTEM');
+
+insert into ecan_i18n_properties values ('vwsurveyresult07','zh_CN','图形报表','i18n.app.graphreport','SYSTEM');
+
+insert into ecan_i18n_properties values ('vwsurveyresult08','en','Graphical reports','i18n.app.graphreport','SYSTEM');
+
+insert into ecan_i18n_properties values ('vwsurveyresult09','zh_CN','导出总表到Excel','i18n.app.exporttotal','SYSTEM');
+
+insert into ecan_i18n_properties values ('vwsurveyresult10','en','Total export tables to Excel','i18n.app.exporttotal','SYSTEM');
+insert into ecan_i18n_properties values ('vwsurveyresult11','zh_CN','按单人导出到Excel','i18n.app.exportperson','SYSTEM');
+
+insert into ecan_i18n_properties values ('vwsurveyresult12','en','Export to Excel by a single person','i18n.app.exportperson','SYSTEM');
+

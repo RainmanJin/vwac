@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.ecannetwork.dto.tech.TechMdttQA" table="TechMdttQA">
+		<id name="id" type="java.lang.String">
+			<column name="ID" />
+			<generator class="uuid.hex" />
+		</id>
+		<property name="question" type="java.lang.String">
+			<column name="question" />
+		</property>
+		<property name="ans" type="java.lang.String">
+			<column name="ans" />
+		</property>
+		<property name="brand" type="java.lang.String">
+			<column name="brand" />
+		</property>
+		<property name="proType" type="java.lang.String">
+			<column name="proType" />
+		</property>
+		<property name="status" type="java.lang.String">
+			<column name="status" />
+		</property>
+		<property name="userID" type="java.lang.String">
+			<column name="userID" />
+		</property>
+		<property name="qusUserID" type="java.lang.String">
+			<column name="qusUserID" />
+		</property>
+		<property name="lastUpdateTime" type="java.util.Date">
+			<column name="lastUpdateTime" />
+		</property>
+		<property name="versionCode" type="java.lang.Integer">
+			<column name="versionCode" />
+		</property>
+		
+		<property name="views" type="java.lang.Integer">
+			<column name="views" />
+		</property>
+		
+	</class>
+</hibernate-mapping>

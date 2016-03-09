@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans   
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd   
+	http://www.springframework.org/schema/context   
+	http://www.springframework.org/schema/context/spring-context-3.0.xsd   
+	http://www.springframework.org/schema/tx   
+	http://www.springframework.org/schema/tx/spring-tx-3.0.xsd   
+	http://www.springframework.org/schema/aop    
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+	<!-- freemarker template config -->
+	<bean id="freemarkerConfig"
+		class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+		<property name="templateLoaderPath" value="/WEB-INF/ftl/" />
+		<property name="defaultEncoding" value="utf-8" />
+		<property name="freemarkerSettings">
+			<props>
+				<prop key="template_update_delay">10</prop>
+				<prop key="default_encoding">UTF-8</prop>
+				<prop key="datetime_format">yyyy-MM-dd HH:mm:ss</prop>
+				<prop key="time_format">HH:mm:ss</prop>
+				<prop key="number_format">0.######</prop>
+				<prop key="boolean_format">true,false</prop>
+				<!-- <prop key="auto_import">"index.ftl" as p</prop> -->
+				<prop key="whitespace_stripping">true</prop>
+				<prop key="tag_syntax">auto_detect</prop>
+				<prop key="url_escaping_charset">UTF-8</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- i18n service config -->
+	<bean id="i18nFacade" class="com.ecannetwork.core.i18n.I18nFacade"
+		init-method="init">
+		<property name="open" value="true" />
+		<property name="db" value="true" />
+		<property name="defaultLang" value="zh_CN" />
+		<!-- <property name="supportLangs"> <list> <value>zh_CN||简体中文||/Lang_zh_CN.cfg</value> 
+			<value>en||English||/Lang_en.cfg</value> </list> </property> -->
+	</bean>
+
+	<!-- cached dto view facade, provider view for ViewDtoTLD class -->
+	<bean id="cachedDtoViewFacade" class="com.ecannetwork.core.tld.facade.CachedDtoViewFacade">
+		<property name="cacheTimeMS">
+			<value>300000</value>
+		</property>
+		<property name="cacheCount">
+			<value>1000</value>
+		</property>
+	</bean>
+
+	<!-- memcached -->
+	<!-- <bean id="memcached" class="com.ecannetwork.core.cache.memcached.Memcached" 
+		init-method="init"> <property name="servers"> <value>127.0.0.1:11211:1</value> 
+		</property> <property name="initConn"> <value>5</value> </property> <property 
+		name="minConn"> <value>5</value> </property> <property name="maxConn"> <value>200</value> 
+		</property> <property name="maxIdle"> <value>5</value> </property> <property 
+		name="maxMainSleep"> <value>30000</value> </property> <property name="socketTimeout"> 
+		<value>30000</value> </property> <property name="connectionTimeout"> <value>10000</value> 
+		</property> </bean> -->
+
+	<!-- reduce cron tasks -->
+	<!-- <bean class="com.ecannetwork.core.reduce.TaskReduceExecutor" init-method="init"> 
+		<property name="taskCron"> <map> <entry key="" value="1000"> </entry> </map> 
+		</property> </bean> -->
+
+	<!-- <bean id="dbLoggerFacade" class="com.ecannetwork.core.logger.DBLoggerFacade"> 
+		<property name="threadCount"> <value>2</value> </property> <property name="maxBufferSize"> 
+		<value>10000</value> </property> </bean> -->
+</beans>

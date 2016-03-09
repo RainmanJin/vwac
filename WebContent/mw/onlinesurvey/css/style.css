@@ -1,0 +1,231 @@
+
+@charset "utf-8";
+/* CSS Document */
+
+@font-face{ font-family:VWHEADLINEOT;src:url(../font/VWHEADLINEOT-BOOK.TTF);}
+
+html {
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+}
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #ffffff;
+	width: 100%;
+	text-align: left;
+	color: #333333;
+	font-size: 48%;
+    font-family:"VWHEADLINEOT"
+}
+
+.animation{
+-webkit-transform: rotate(-90deg);
+-webkit-transition-property:all;
+-webkit-transition-duration:0.5;
+-webkit-transition-delay:0;
+-webkit-transition-timing-function:ease;
+}
+
+
+a, a:link, a:visited, a:hover, a:active {
+	color: #000;
+	text-decoration: none;
+        cursor: pointer;
+    
+}
+label{cursor: pointer;}
+.clear{ clear:both}
+.main {
+	width: 100%;
+}
+.main img {
+	width: 100%
+}
+.main .mid {
+	text-align:center;
+	margin-top: 35%
+}
+.main .mid img{width:298px}
+.main .bottom {
+	position: absolute;
+	bottom: 0px; right: 0px;
+    float: right;
+	z-index:-1;
+}
+.main .bottom img{  width: 202px}
+.welcome {
+	text-align: center;
+	margin: 0 auto;width: 80%;
+}
+
+
+.btn,.btns {text-align: center; margin:0 10% 0 10%;width: 80%;position:absolute;bottom:25%;}
+.btn a{ box-sizing: border-box;
+	font-size: 1.6em;
+    padding:0;
+	border: 1px solid #adadab;
+	color: #000000;
+	background-color: #e8e8e8;
+	background-image: linear-gradient(to top, #dbdbdb, #f4f4f4);
+	text-shadow: 0.5px 0.5px 1px #fff;
+	text-align: center;
+	border-radius: 3px;
+	width: 192px;
+	height: 40px;
+    padding-top: 5px;
+    line-height:16px;
+    display:inline-block; margin: 0 10px;
+}
+.btns a{ box-sizing: border-box;
+	font-size: 1.6em;
+    padding:0;
+	border: 1px solid #adadab;
+	color: #000000;
+	background-color: #e8e8e8;
+	background-image: linear-gradient(to top, #dbdbdb, #f4f4f4);
+	text-shadow: 0.5px 0.5px 1px #fff;
+	text-align: center;
+	border-radius: 3px;
+	width: 192px;
+	height: 40px;
+    line-height:40px;
+    display:inline-block; margin: 0 10px;
+}
+
+.btns span {
+	width: 2%;
+	display: inline-block
+}
+
+.survey {font-size:2em;margin-top: 0;width: 80%;margin: 0 auto;}
+.survey h2 {font-weight: normal;font-size: 0.8em;margin:0;width:100%; margin-bottom: 5px}
+.survey h2 span{ float:right}
+.survey ul {padding: 0;margin: 0 auto;margin:20px 0px 10px 0px;}
+.survey ul li {list-style: none;margin: 0 0 5px 0;margin-right: 0px;font-size:1em; float:none}
+.finish {
+	text-align: center;
+	margin: 0 auto;
+	font-size: 2em;
+	margin-top: 120px;
+}
+.survey textarea {
+	width: 95%;
+	height: 140px;
+	padding-top: 5px;
+    margin-top:10%;
+}
+
+.nodisplay{ display:none}
+.save{ width:100%; height:100%; position:absolute; background:rgba(0,0,0,0.8); z-index:10;}
+.save h2{ color:#FFF; text-align:center; margin-top:48%; font-size:2em}
+.qa p {padding-left: 1.4em; text-indent: -1.4em;min-height: 45px;max-height:45px; margin: 20px 0; line-height: 1.6em}
+
+.tips{ width: 100%; position: absolute; bottom:0}
+.tips p{font-size: 1.6em;width: 700px; margin: 0 auto; margin-bottom:3%}
+
+.info{ width: 80%; list-style: none; margin: 30px auto; font-size: 1.4em;}
+.info li{ float: left; margin-top: 30px; height:60px; box-sizing: border-box; overflow: hidden}
+.info li:nth-child(2n-1){width: 45%; }
+.info li:nth-child(2n){width: 55%;}
+.info h2{float: left;}
+.info li span{ display: inline-block;; width: 50%; float: right;margin: 15px 0px 0px 20px; height: 37px; border:1px solid #ccc; text-align: center; line-height: 37px;}
+.info li:nth-child(2n-1) span{ float: left; width: 60%;}
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (-webkit-min-device-pixel-ratio: 2) { 
+.main .mid {margin-top: 10%;}
+.main .mid img {width:298px;}
+.btns,.btn {width: 60%;margin: 0 20% 0 20%;position:absolute;bottom:30%;}
+.survey {font-size: 2.2em;width: 68%;margin-top: 3%}
+.survey ul {margin-bottom: 150px;}
+.survey ul li {list-style: none;margin: 10px 30px 0px 0;font-size:0.8em; width:100%}
+.survey textarea {margin-top:0;}
+.welcome {width: auto}
+.save h2{ margin-top:28%;}
+}
+
+
+
+/* iPhones (landscape) ----------- */
+@media only screen
+and (orientation : landscape) {
+    body{ font-size:50%}
+    .main .mid {margin-top:5%}
+    .main .mid img {width:298px;}
+    .survey ul { margin-top:30px}
+    .survey ul li { float:none}
+    .survey h2{margin-bottom:5px;}
+    .survey textarea { height:60px;padding-top:5px; font-size:1.2em; margin-top:5%;}
+    .finish{ margin-top:60px;}
+    .save h2{ margin-top:20%;}  
+}
+/* ipad (portrait) ----------- */
+@media only screen 
+    and (orientation : portrait) {
+.info h2{ font-size: 1.1em; padding-top: 10px}
+.tips p{ width:580px;}
+.tips p:nth-child(2){ margin-bottom:10%}
+.survey{ margin-top: 15%}
+.btn,.btns {position:absolute;bottom:25%;}
+.qa p {padding-left: 1.4em; text-indent: -1.4em; min-height: 60px;max-height:60px;}
+    }
+
+@media only screen
+and (orientation : landscape)
+and (-webkit-min-device-pixel-ratio: 2) {
+.btn,.btns {position:absolute;bottom:25%;}
+.qa{ margin-top: 20px;}
+.option{ margin-top: 10px:}
+.qa p{ margin-bottom: 10px;}
+}
+
+/* iPhones (landscape) ----------- */
+@media only screen
+and (orientation : landscape)
+and (max-device-width : 736px)   {
+.main .bottom img { width: 100px;}
+.main .mid {margin-top:0%}
+.main .mid img {width:200px;}
+.info{font-size:0.8em; clear: both;margin:2% 5%; width: auto; padding:0; width: 95%}
+.info li{ margin: 0;width: 50%; height: 42px;}
+.info li span{ margin: 0; font-size: 1.4em}
+.info li:nth-child(2n-1) {width: 40%;}
+.info li:nth-child(2n-1) span {margin-left: 5%;}
+.tips {display: none}
+.btn, .btns{bottom:4%}
+.qa {margin-top: 5px;}
+.qa p{margin: 2px 0;line-height: 1.2em; max-height: 30px;min-height: 30px;max-height: 20px;font-size: 0.8em;padding-left: 1.8em;text-indent: -1.8em;}
+.survey ul { margin-top: 5px; }
+.survey ul li { float: left; margin-left: 10px; font-size: 0.8em}
+.btn a { width: 132px;}
+.survey {width: 95%;}
+.survey textarea{height:40px; margin: 0 2.5%; margin-top: 26px}
+}
+/* iPhones (portrait) ----------- */
+@media only screen
+and (orientation : portrait)
+and (max-device-width : 414px)   {
+.main .bottom img { width: 100px;}
+.main .mid {margin-top:0%}
+.main .mid img {width:200px; margin-top: 10px}
+.info{font-size:1em; clear: both;margin:2% 5% 0 5%; width: auto; padding:0; width: 90%}
+.info h2{ padding-top: 0px; font-size: 1.2em}
+.info li{ margin: 0;width: 100%; height: 60px; float: none}
+.info li:nth-child(2n-1){width: 100%;}
+.info li:nth-child(2n){width: 100%;}
+.info li span{ margin: 0; font-size: 1em; width: 55%; float: right}
+.info li:nth-child(2n-1) span {width: 55%; float: right}
+.tips {display: none}
+.btn, .btns{bottom:4%;width: 90%;margin: 0 5%;}
+.qa {margin-top: 5px;}
+.qa p{margin: 2px 0;line-height: 1.2em; max-height: 60px;min-height: 60px;max-height: 20px;font-size: 0.8em;padding-left: 1.8em;text-indent: -1.8em;}
+.survey ul { margin-top: 5px; }
+.survey ul li {margin-left: 10px; font-size: 0.8em}
+.btn a { width: 120px;}
+.survey {width: 95%;}
+.survey textarea{height:40px; margin: 0 2.5%; margin-top: 26px}
+}
