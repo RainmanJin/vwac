@@ -181,9 +181,6 @@ public class B8Controller {
         + "' and type='this' and Bigitem='001'  and startTime>'" + txtDate
         + " 00:00:00' and startTime< '" + txtDate + " 23:59:59' ");
     int k1 = 0, k2 = 0, k3 = 0, k4 = 0, k5 = 0, k6 = 0, k7 = 0, k8 = 0, k9 = 0, k10 = 0, k11 = 0, k12 = 0, k13 = 0, k14 = 0, k15 = 0, k16 = 0, k17 = 0, k18 = 0;
-    Double d = 32.123;
-    System.out.println(d.equals(32.123)
-        + "=====================================================================");
     if (list0.size() > 0) {
       for (SqPassatB8 sp : list0) {
         if (sp.getScore().intValue() == 6 && sp.getItem().equals("0001")) {
