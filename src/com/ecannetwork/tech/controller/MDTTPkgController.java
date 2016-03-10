@@ -560,38 +560,42 @@ public class MDTTPkgController {
 			if(multipartFile != null)
 			{
 				String fileName = multipartFile.getOriginalFilename();
-				String storeFileNameWithPath = CoreConsts.Runtime.APP_ABSOLUTE_PATH+File.separator+"tech"
-						+ File.separator + "upload" + File.separator + "dmppkg"
-						+ File.separator + fileName.split("\\.")[0];
-				//判断路径
-				File dirFile = new File(CoreConsts.Runtime.APP_ABSOLUTE_PATH+File.separator+"tech"
-						+ File.separator + "upload");
-				if (!dirFile.exists()) {
-					dirFile.mkdir();
-					dirFile=new File(CoreConsts.Runtime.APP_ABSOLUTE_PATH
-						+ File.separator + "tech"+File.separator+"upload"+File.separator+"dmppkg");
-					dirFile.mkdir();
-				}else {
-					dirFile=new File(CoreConsts.Runtime.APP_ABSOLUTE_PATH
-							+ File.separator + "tech"+File.separator+"upload"+File.separator+"dmppkg");
+				if (fileName!=null&&!fileName.equals("")) {
+					String storeFileNameWithPath = CoreConsts.Runtime.APP_ABSOLUTE_PATH+File.separator+"tech"
+							+ File.separator + "upload" + File.separator + "dmppkg"
+							+ File.separator + fileName.split("\\.")[0];
+					//判断路径
+					File dirFile = new File(CoreConsts.Runtime.APP_ABSOLUTE_PATH+File.separator+"tech"
+							+ File.separator + "upload");
 					if (!dirFile.exists()) {
 						dirFile.mkdir();
-					}				
-				}
-				//上传文件
-				String[] tmp = fileName.split("\\.");
-				File file = new File(storeFileNameWithPath + "."
-						+ fileName.split("\\.")[1]);
-				if (!file.exists()) {
-					AjaxResponse response = null;
-					response = FileUploadHelper.upload(request, storeFileNameWithPath,
-							"filePath", Configs.getAsList("courseAttachementFileType"), true);
-					String filePathString=File.separator+"tech"+File.separator + "upload" + File.separator
-							+ "dmppkg" + File.separator + fileName.split("\\.")[0] + "."
-							+ fileName.split("\\.")[1].toLowerCase();
-					String apath = filePathString.replace('\\', '/');
-					pkg.setFilePath(apath);
-				}
+						dirFile=new File(CoreConsts.Runtime.APP_ABSOLUTE_PATH
+							+ File.separator + "tech"+File.separator+"upload"+File.separator+"dmppkg");
+						dirFile.mkdir();
+					}else {
+						dirFile=new File(CoreConsts.Runtime.APP_ABSOLUTE_PATH
+								+ File.separator + "tech"+File.separator+"upload"+File.separator+"dmppkg");
+						if (!dirFile.exists()) {
+							dirFile.mkdir();
+						}				
+					}
+					
+					//上传文件
+					String[] tmp = fileName.split("\\.");
+					File file = new File(storeFileNameWithPath + "."
+							+ fileName.split("\\.")[1]);
+					if (!file.exists()) {
+						AjaxResponse response = null;
+						response = FileUploadHelper.upload(request, storeFileNameWithPath,
+								"filePath", Configs.getAsList("courseAttachementFileType"), true);
+						String filePathString=File.separator+"tech"+File.separator + "upload" + File.separator
+								+ "dmppkg" + File.separator + fileName.split("\\.")[0] + "."
+								+ fileName.split("\\.")[1].toLowerCase();
+						String apath = filePathString.replace('\\', '/');
+						pkg.setFilePath(apath);
+					}
+				}				
+				
 			}
 			
 			
