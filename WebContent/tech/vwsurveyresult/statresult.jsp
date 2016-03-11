@@ -13,7 +13,8 @@
 			<div id="content_right">
 				<div class="tt">${i18n.appname.mw.vwsurveystatvote}</div>
 				<div>${i18n.app.effectivesize} ${userfullCount}</div>
-				<ec:table action="statresult" method="get" items="SubDatalist" var="var" view="ecan" width="99%" imagePath="${coreImgPath}/table/*.gif" showExports="false">
+				<ec:table action="statresult" method="get" items="SubDatalist" var="var" view="ecan" width="99%" imagePath="${coreImgPath}/table/*.gif" showExports="false" filterable="false"
+					showPagination="false">
 					<ec:row>
 						<ec:column title="${i18n.survey.name}" property="sub" width="90%">
 						</ec:column>

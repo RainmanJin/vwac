@@ -44,7 +44,8 @@
 			<div id="content_right">
 				<div class="tt">${i18n.appname.mw.vwsurveystatvote}</div>
 				<div>当前调查问卷有效样本数：${userfullCount}</div>
-				<ec:table action="statreport" method="get" items="SubDatalist" var="var" view="ecan" width="99%" imagePath="${coreImgPath}/table/*.gif" showExports="false">
+				<ec:table action="statreport" method="get" items="SubDatalist" var="var" view="ecan" width="99%" imagePath="${coreImgPath}/table/*.gif" showExports="false" filterable="false"
+					showPagination="false">
 					<ec:row>
 						<ec:column title="调查名称" property="sub" width="90%">
 						</ec:column>
