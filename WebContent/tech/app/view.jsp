@@ -47,7 +47,7 @@
 	<div id="contentwrapper">
 		<div id="content_right">
 			<div class="tt">
-				<%-- ${i18n.resourse.title} --%>
+				${i18n.appname.mw.appplatform}
 			</div>
 			<c:choose>
 				<c:when test="${not empty appPlatForm.id}">
