@@ -1,0 +1,13 @@
+
+insert into ecan_i18n_properties 
+set id='ff8080812349014ea01tsdff03ff006',lang_type='zh_CN',
+TEXT_VALUE='通知类型管理',
+property_id='i18n.appname.type.title',app_ID='SYSTEM';
+  
+
+insert into ecan_i18n_properties 
+set id='ff8080812349014ea01weeff03ff006',
+	lang_type='en',
+    TEXT_VALUE='Note Type Management',
+    property_id='i18n.appname.type.title',
+    app_ID='SYSTEM';
