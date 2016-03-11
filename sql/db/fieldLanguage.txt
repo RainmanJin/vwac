@@ -131,3 +131,6 @@ insert into ecan_i18n_properties values ('vwsurveyresult11','zh_CN','°´µ¥ÈËµ¼³öµ
 insert into ecan_i18n_properties values ('vwsurveyresult12','en','Export to Excel by a single person','i18n.app.exportperson','SYSTEM');
 
 
+insert into ecan_i18n_properties values ('mdttpkg001','zh_CN','Ñ§Ï°·½Ê½','i18n.mdttpkg.learntype','SYSTEM');
+
+insert into ecan_i18n_properties values ('mdttpkg002','en','learn type','i18n.mdttpkg.learntype','SYSTEM');

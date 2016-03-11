@@ -536,6 +536,7 @@ public class MDTTPkgController {
 			@RequestParam(value = "fixedName", required = false) String fixedName,
 			@RequestParam(value = "brand", required = false) String brand,
 			@RequestParam(value = "proType", required = false) String proType,
+			@RequestParam(value = "conentType", required = false) String conentType,
 			@RequestParam(value = "status", required = false) String status,
 			@RequestParam(value = "osType", required = false) String osType,
 			@RequestParam(value = "remark", required = false) String remark,
@@ -544,14 +545,19 @@ public class MDTTPkgController {
 		
 		pkg = new TechMdttPkg();
 		pkg.setId(UUID.randomUUID());
-		pkg.setConentType(TechMdttPkg.CONTENT_TYPE.SSP);
+		if (conentType.equals("1")) {
+			pkg.setConentType(TechMdttPkg.CONTENT_TYPE.SSP);
+		} else {
+			pkg.setConentType(TechMdttPkg.CONTENT_TYPE.CLASS_ROOM);
+		}
+		
 		pkg.setStatus("1");
 		pkg.setPkgType("SCO");
 		pkg.setFileSize("0M");
 		pkg.setLastUpdateTime(new Date());
 
-		if (StringUtils.equals(pkg.getConentType(),
-				TechMdttPkg.CONTENT_TYPE.SSP)) {
+//		if (StringUtils.equals(pkg.getConentType(),
+//				TechMdttPkg.CONTENT_TYPE.SSP)) {
 			
 			//上传
 			MultipartHttpServletRequest multipartHttpServletRequest = (MultipartHttpServletRequest) request;
@@ -612,9 +618,10 @@ public class MDTTPkgController {
 			
 			this.commonService.saveOrUpdateTX(pkg);
 			return new AjaxResponse(true);
-		} else {
-			return new AjaxResponse(false, "保存失败");
-		}
+//		} 
+//	     else {
+//			return new AjaxResponse(false, "保存失败");
+//		}
 	}
 
 	@RequestMapping("status")
