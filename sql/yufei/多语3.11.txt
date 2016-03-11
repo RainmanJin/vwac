@@ -11,3 +11,62 @@ set id='ff8080812349014ea01weeff03ff006',
     TEXT_VALUE='Note Type Management',
     property_id='i18n.appname.type.title',
     app_ID='SYSTEM';
+
+update ecan_i18n_properties set text_value='WeiXin Mangament' where property_id='i18n.appname.mw.newsmanager' and lang_type='en'
+;
+
+insert into ecan_i18n_properties 
+set id='ff8080812349014ea01tsdtf03ff006',
+	lang_type='zh_CN',
+    TEXT_VALUE='微信新闻管理新增',
+    property_id='i18n.appname.mw.newsmanageradd',
+    app_ID='SYSTEM';
+  
+insert into ecan_i18n_properties 
+set id='ff8080812349014ea01w1eff03ff006',
+	lang_type='en',
+    TEXT_VALUE='WenXin News Management Add',
+    property_id='i18n.appname.mw.newsmanageradd',
+    app_ID='SYSTEM';
+
+    insert into ecan_i18n_properties 
+set id='ff8080812349014ea01tsdt23ty06',
+	lang_type='zh_CN',
+    TEXT_VALUE='微信新闻管理编辑',
+    property_id='i18n.appname.mw.newsmanageredit',
+    app_ID='SYSTEM';
+  
+insert into ecan_i18n_properties 
+set id='ff8080812349014ea01w1ef12ff206',
+	lang_type='en',
+    TEXT_VALUE='WenXin News Management Edit',
+    property_id='i18n.appname.mw.newsmanageredit',
+    app_ID='SYSTEM';
+
+insert into ecan_i18n_properties 
+set id='ff8080812349014ea01tsdtf03ff026',
+	lang_type='zh_CN',
+    TEXT_VALUE='卡片标题管理',
+    property_id='i18n.main.picture.title',
+    app_ID='SYSTEM';
+  
+insert into ecan_i18n_properties 
+set id='ff8080812349014ea01w1eff03ff004',
+	lang_type='en',
+    TEXT_VALUE='Picture Title Management',
+    property_id='i18n.main.picture.title',
+    app_ID='SYSTEM';
+
+insert into ecan_i18n_properties 
+set id='ff8080812349014ea01tsdtf23ff026',
+	lang_type='zh_CN',
+    TEXT_VALUE='卡片内容管理',
+    property_id='i18n.sellingpoint.conent',
+    app_ID='SYSTEM';
+  
+insert into ecan_i18n_properties 
+set id='ff8080812349014ea01w1eff03ff001',
+	lang_type='en',
+    TEXT_VALUE='Picture Content Management',
+    property_id='i18n.sellingpoint.conent',
+    app_ID='SYSTEM';

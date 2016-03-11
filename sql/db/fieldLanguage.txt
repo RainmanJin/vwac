@@ -130,3 +130,4 @@ insert into ecan_i18n_properties values ('vwsurveyresult11','zh_CN','°´µ¥ÈËµ¼³öµ
 
 insert into ecan_i18n_properties values ('vwsurveyresult12','en','Export to Excel by a single person','i18n.app.exportperson','SYSTEM');
 
+

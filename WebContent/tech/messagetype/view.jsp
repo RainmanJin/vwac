@@ -28,7 +28,7 @@
 <div class="centerbody centerbox">
 	<div id="contentwrapper">
 		<div id="content_right">
-				<div class="tt">${i18n.mdttqa.title}</div>
+				<div class="tt">${i18n.appname.type.title}</div>
 				<form id="mtForm" action="save" method="post">
 				<input type="hidden" name="id" value="${dto.id}" />
 				<ul class="form">

@@ -56,7 +56,7 @@
 <div class="centerbody centerbox">
 	<div id="contentwrapper">
 		<div id="content_right">
-			<div class="tt">${i18n.message.list}
+			<div class="tt">${i18n.Note.mana}
 				
 			</div>
 			
