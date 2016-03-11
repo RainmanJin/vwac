@@ -513,13 +513,14 @@ public class VwSurveyResultController
 
 			String CourseStart = "";
 			String CourseEnd = "";
+			DateFormat format3 = new SimpleDateFormat("yyyy-MM-dd");
 			if (mwVotecourse.getCourseStart() != null)
 			{
-				CourseStart = DateFormat.getDateInstance().format(mwVotecourse.getCourseStart());
+				CourseStart = format3.format(mwVotecourse.getCourseStart());
 			}
 			if (mwVotecourse.getCourseEnd() != null)
 			{
-				CourseEnd = DateFormat.getDateInstance().format(mwVotecourse.getCourseEnd());
+				CourseEnd = format3.format(mwVotecourse.getCourseEnd());
 			}
 
 			excelallreportSb
@@ -924,13 +925,14 @@ public class VwSurveyResultController
 
 		String CourseStart = "";
 		String CourseEnd = "";
+		DateFormat format3 = new SimpleDateFormat("yyyy-MM-dd");
 		if (mwVotecourse.getCourseStart() != null)
 		{
-			CourseStart = DateFormat.getDateInstance().format(mwVotecourse.getCourseStart());
+			CourseStart = format3.format(mwVotecourse.getCourseStart());
 		}
 		if (mwVotecourse.getCourseEnd() != null)
 		{
-			CourseEnd = DateFormat.getDateInstance().format(mwVotecourse.getCourseEnd());
+			CourseEnd = format3.format(mwVotecourse.getCourseEnd());
 		}
 
 		excelallreportSbsingle
