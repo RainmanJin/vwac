@@ -717,8 +717,7 @@ public class ClientController {
 					if (currentPage == 0) {
 						currentPage = 1;
 						list = (List<TechMdttLN>) commonService.pageListQuery(
-								hql.toString(), (currentPage - 1) * pageSize,
-								pageSize);
+								hql.toString(), pageSize, (currentPage - 1)* pageSize);
 					}
 				} else {
 					list = (List<TechMdttLN>) commonService
@@ -1079,7 +1078,7 @@ public class ClientController {
 				System.out.println("大于1============="+hql);
 				//pkgs = commonService.list(hql.toString());
 				if(pages > 0){
-					pkgs= (List<TechMdttPkg>)commonService.pageListQuery(hql.toString(), currentp+pages,pages );
+					pkgs= (List<TechMdttPkg>)commonService.pageListQuery(hql.toString(), pages, currentp+pages);
 				}else{
 					pkgs= (List<TechMdttPkg>)commonService.list(hql.toString());
 				}

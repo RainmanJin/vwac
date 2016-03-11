@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 23, 2016 11:15:36 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.ecannetwork.dto.tech.EcanDomainvalue" table="ecan_domainvalue">
+        <id name="id" type="string">
+            <column name="ID" length="32" />
+            <generator class="assigned" />
+        </id>
+        <property name="indexsequnce" type="int">
+            <column name="INDEXSEQUNCE" not-null="true" />
+        </property>
+        <property name="domainlabel" type="string">
+            <column name="DOMAINLABEL" length="65535" not-null="true" />
+        </property>
+        <property name="domainId" type="string">
+            <column name="DOMAIN_ID" length="32" not-null="true" />
+        </property>
+        <property name="value" type="string">
+            <column name="VALUE" length="60" not-null="true" />
+        </property>
+        <property name="domainlevel" type="string">
+            <column name="DOMAINLEVEL" length="60" />
+        </property>
+        <property name="isDelete" type="string">
+            <column name="IS_DELETE" length="2" />
+        </property>
+    </class>
+</hibernate-mapping>

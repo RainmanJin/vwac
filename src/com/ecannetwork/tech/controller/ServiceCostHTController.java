@@ -38,20 +38,30 @@ public class ServiceCostHTController {
 			@RequestParam(value = "id") String id,
 			@RequestParam(value = "username") String username,
 			@RequestParam(value = "password") String password) {
-
-		RestResponse resp = this.validateUser(username, password);
-		RestResponseList resplist = new RestResponseList();
-		List<MwServicecost> list = (List<MwServicecost>) commonService.list(
-				"from MwServicecost t where t.id=?", id);
-		if (list != null && list.size() > 0) {
-			resp.setData(list);
-			resp.setTotal(list.size() + "");
-			resplist.setList(resp);
-			resplist.setRespStatus(resp.getRespStatus());
-			resp.setRespStatus(null);
-		}
-
-		return resplist;
+		try {
+			RestResponse resp = this.validateUser(username, password);
+			RestResponseList resplist = new RestResponseList();
+			if (resp.success()) {
+				List<MwServicecost> list = (List<MwServicecost>) commonService.list(
+						"from MwServicecost t where t.id=?", id);
+				if (list != null && list.size() > 0) {
+					resp.setData(list);
+					resp.setTotal(list.size() + "");
+					resplist.setList(resp);
+					resplist.setRespStatus(resp.getRespStatus());
+					resp.setRespStatus(null);
+				}
+				return resplist;
+			}else {
+				resp.setData(null);
+				resplist.setRespStatus(resp.getRespStatus());
+				return resplist;
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			return null;
+		}		
 	}
 	
 	@RequestMapping("list")
@@ -63,29 +73,40 @@ public class ServiceCostHTController {
 			@RequestParam(value = "currentPage", required = false,defaultValue="1") Integer currentPage,
 			@RequestParam(value = "username") String username,
 			@RequestParam(value = "password") String password) {
+        try {
+        	RestResponse resp = this.validateUser(username, password);
+    		RestResponseList resplist = new RestResponseList();
+    		if (resp.success()) {
+    			StringBuilder hql = new StringBuilder("from MwServicecost t where 1=1");
+    			if (StringUtils.isNotBlank(projectid)&&Integer.valueOf(projectid)>0) {
 
-		RestResponse resp = this.validateUser(username, password);
-		RestResponseList resplist = new RestResponseList();
-		StringBuilder hql = new StringBuilder("from MwServicecost t where 1=1");
-		if (StringUtils.isNotBlank(projectid)&&Integer.valueOf(projectid)>0) {
+    				hql.append(" and projectid = '" + projectid + "'");
+    			}
+    			if (StringUtils.isNotBlank(tableid)&&Integer.valueOf(tableid)!=-1) {
 
-			hql.append(" and projectid = '" + projectid + "'");
+    				hql.append(" and tableid = '" + tableid + "'");
+    			}
+    			List<MwServicecost> list = (List<MwServicecost>) commonService.pageListQuery(hql.toString(),
+						pageSize, (currentPage - 1) * pageSize);
+    			if (list != null && list.size() > 0) {
+    				resp.setData(list);
+    				resp.setTotal(list.size() + "");
+    				resplist.setList(resp);
+    				resplist.setRespStatus(resp.getRespStatus());
+    				resp.setRespStatus(null);
+    			}
+
+    			return resplist;
+			} else {
+				resp.setData(null);
+				resplist.setRespStatus(resp.getRespStatus());
+				return resplist;
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			return null;
 		}
-		if (StringUtils.isNotBlank(tableid)&&Integer.valueOf(tableid)!=-1) {
-
-			hql.append(" and tableid = '" + tableid + "'");
-		}
-		List<MwServicecost> list = (List<MwServicecost>) commonService.pageListQuery(hql.toString(), (currentPage - 1) * pageSize,
-        						pageSize);
-		if (list != null && list.size() > 0) {
-			resp.setData(list);
-			resp.setTotal(list.size() + "");
-			resplist.setList(resp);
-			resplist.setRespStatus(resp.getRespStatus());
-			resp.setRespStatus(null);
-		}
-
-		return resplist;
 	}
 	
 	@RequestMapping("saveitem")
@@ -105,9 +126,12 @@ public class ServiceCostHTController {
 	            servicecost.setTableid(tableid);
 	            servicecost.setA3(a3);
 	            commonService.saveOrUpdateTX(servicecost);
+	            return resp;
+			}else {
+				resp.setData(null);	
+				return resp;
 			}
-			resp.setData(null);	
-			return resp;
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
