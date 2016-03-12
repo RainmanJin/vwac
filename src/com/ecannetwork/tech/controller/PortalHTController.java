@@ -1,5 +1,7 @@
 ﻿package com.ecannetwork.tech.controller;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -45,6 +47,9 @@ public class PortalHTController {
 	@Autowired
 	private AuthFacade authFacade;
 	private CommonDAO commonDAO;
+	
+	private static final DateFormat FORMATTER = new SimpleDateFormat(
+			"yyyy-MM-dd");
 
 	@RequestMapping("login")
 	public @ResponseBody RestResponse GetUserLogin(HttpServletRequest request,
@@ -272,8 +277,9 @@ public class PortalHTController {
 			@RequestParam(value = "password") String password) {
 
 		try {
-			RestResponse resp = this.validateUser(username, password);
+			RestResponse resp =this.validateUserhomenew(username, password);
 			RestResponseList resplist = new RestResponseList();
+			
 			if (resp.success()) {
 				StringBuilder hql = new StringBuilder(
 						//"from MwArticle t where typeId='homenew' and id=" + id);
@@ -450,6 +456,7 @@ public class PortalHTController {
 							if (user!=null) {
 								mwCoursecomment.setName(user.getName());
 							}
+							
 						}
 					}
 					resp.setData(list);
@@ -591,5 +598,18 @@ public class PortalHTController {
 			}
 		}
 
+	}
+	
+	private RestResponse validateUserhomenew(String username, String password) {
+		EcanUser user = (EcanUser) this.commonService.listOnlyObject(
+				"from EcanUser t where t.loginName = ?", username); // username
+
+		if (user!=null) {
+			user.setLoginPasswd(null);
+
+			return RestResponse.success(user);
+		} else {
+			return RestResponse.success(null);
+		}
 	}
 }

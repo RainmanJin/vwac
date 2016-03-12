@@ -27,5 +27,8 @@
 		<property name="createTime" type="java.util.Date">
 			<column name="createTime" />
 		</property>
+		<property name="pkgimg" type="string">
+            <column name="pkgimg" length="65535" />
+        </property>
 	</class>
 </hibernate-mapping>
