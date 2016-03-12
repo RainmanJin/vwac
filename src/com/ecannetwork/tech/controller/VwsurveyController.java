@@ -138,10 +138,16 @@ public class VwsurveyController extends DateBindController
 				votetemp = FileUtils.readFile(defaultTemplateFile) + "\n";
 			}
 
-			votetemp = votetemp.replace("{id}", mwVotecourse.getId()).replace("{path}", ExecuteContext.realPath()).replace("{title}", mwVotecourse.getCTitle())
-					.replace("{course}", mwVotecourse.getCCourse()).replace("{teacher}", mwVotecourse.getCTearcher()).replace("{address}", mwVotecourse.getCAdrees())
-					.replace("{starttime}", mwVotecourse.getDtStartDate().toString()).replace("{endtime}", mwVotecourse.getDtOverDate().toString())
-					.replace("{coursestarttime}", mwVotecourse.getCourseStart().toString()).replace("{courseendtime}", mwVotecourse.getCourseEnd().toString());
+			votetemp = votetemp.replace("{id}", mwVotecourse.getId())
+					.replace("{path}", ExecuteContext.realPath())
+					.replace("{title}", mwVotecourse.getCTitle())
+					.replace("{course}", mwVotecourse.getCCourse())
+					.replace("{teacher}", mwVotecourse.getCTearcher())
+					.replace("{address}", mwVotecourse.getCAdrees())
+					.replace("{starttime}", mwVotecourse.getDtStartDate()==null?"":mwVotecourse.getDtStartDate().toString())
+					.replace("{endtime}", mwVotecourse.getDtOverDate()==null?"":mwVotecourse.getDtOverDate().toString())
+					.replace("{coursestarttime}", mwVotecourse.getCourseStart() == null ? "" : mwVotecourse.getCourseStart().toString())
+					.replace("{courseendtime}", mwVotecourse.getCourseEnd() == null ? "" : mwVotecourse.getCourseEnd().toString());
 
 			// 生成内容
 			votetemp = votetemp.replace("{Content}", pubBuildHtml(mwVotecourse).replace("{Images}", ExecuteContext.realPath() + "/mw/onlinesurvey/SysImages"));
@@ -646,13 +652,14 @@ public class VwsurveyController extends DateBindController
 				response.setContentType("text/html; charset=utf-8");
 
 				out.print("<script>alert('投票成功！')</script>");
-				out.print("<script>location.href='" + idresultFile + "'</script>");
+				out.print("<script>location.href='" + ExecuteContext.contextPath() + "/mw/onlinesurvey/result_" + id + ".htm" + "'</script>");
 				out.close();
 			}
 			else
 			{
 				resulttemp = FileUtils.readFile(defaultresultlateFile);
-				
+				resulttemp = resulttemp.replace("{voteid}", String.valueOf(id));
+
 				File file = new File(defaultresultlateFile);
 				if (file.exists())
 				{
@@ -665,7 +672,7 @@ public class VwsurveyController extends DateBindController
 				response.setContentType("text/html; charset=utf-8");
 
 				out.print("<script>alert('投票成功！')</script>");
-				out.print("<script>location.href='" + defaultresultlateFile + "'</script>");
+				out.print("<script>location.href='" + ExecuteContext.contextPath() + "/mw/onlinesurvey/result.htm" + "'</script>");
 				out.close();
 			}
 		}

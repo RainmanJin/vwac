@@ -176,7 +176,7 @@ function nextPage()
 {
 	var len=$('.survey div').length;
 	var n=parseInt(currentpage)+1;
-	if(n>len-1)
+    if(n>len-1)
 	{
 		if($.cookie(cookie))
 		{
