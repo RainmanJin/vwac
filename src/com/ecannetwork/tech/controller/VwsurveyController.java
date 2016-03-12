@@ -73,8 +73,8 @@ public class VwsurveyController extends DateBindController
 	private CommonService commonService;
 	@Autowired
 	private TestDbService dbService;
-	
-	private String tmpPath="http://123.57.17.189:8084/";
+
+	private String tmpPath = "http://123.57.17.189:8084/";
 
 	@RequestMapping("index")
 	public String index(Model model)
@@ -173,7 +173,7 @@ public class VwsurveyController extends DateBindController
 			}
 
 			FileUtils.writeFile(newFile, votetemp);
-			System.out.println("build create file : "+newFile);
+			System.out.println("build create file : " + newFile);
 
 			return new AjaxResponse(true, "生成投票问卷成功");
 		}
@@ -291,8 +291,8 @@ public class VwsurveyController extends DateBindController
 
 		strResult.append("</div><div class=\"btn\"> <a id=\"btnpre\">上一页<br />Previous</a> <span></span> <a id=\"btnnext\">下一页<br />Next</a>");
 		strResult.append(" </div>");
-		//strResult.append("<br><br><input type=\"submit\" name=\"Submit\" value=\"提 交\" style=\"width:100px\"></form>");
-		
+		// strResult.append("<br><br><input type=\"submit\" name=\"Submit\" value=\"提 交\" style=\"width:100px\"></form>");
+
 		strResult.append("</form>");
 
 		return strResult.toString();
@@ -493,13 +493,13 @@ public class VwsurveyController extends DateBindController
 	@RequestMapping("pushreport")
 	public String pushreport(Model model, @RequestParam(value = "id", required = true) String id)
 	{
-		
+
 		System.out.println("pushreport : " + id);
 		// 先查出当前记录
 		MwVotecourse mwVotecourse = (MwVotecourse) commonService.get(id, MwVotecourse.class);
 		if (mwVotecourse != null)
 		{
-			//TODO:temp
+			// TODO:temp
 			String webpath = this.tmpPath + "mw/onlinesurvey/" + id + ".html";// 路径
 			try
 			{
@@ -622,15 +622,61 @@ public class VwsurveyController extends DateBindController
 			}
 		}
 
-		method_3(id, sysId);
+		String strA = mwVotecourse.getCReturnUrl();
 
-		// return new AjaxResponse(true, "投票成功！");
-		PrintWriter out = response.getWriter();
-		response.setContentType("text/html; charset=utf-8");
+		String resulttemp = "";
+		String idresultFile = ExecuteContext.realPath() + "mw/onlinesurvey/result_" + id + ".htm";// 对应id的结果
+		String defaultresultlateFile = ExecuteContext.realPath() + "mw/onlinesurvey/result.htm";// 默认的结果
+		if (strA.isEmpty())
+		{
+			if (FileUtils.fileExists(idresultFile))
+			{
+				resulttemp = FileUtils.readFile(idresultFile);
+				resulttemp = resulttemp.replace("{voteid}", String.valueOf(id));
 
-		out.print("<script>alert('投票成功！')</script>");
-		out.print("<script>location.href='/Portal2012/mw/onlinesurvey/" + id + ".html'</script>");
-		out.close();
+				File file = new File(idresultFile);
+				if (file.exists())
+				{
+					file.delete();
+				}
+
+				FileUtils.writeFile(idresultFile, resulttemp);
+
+				PrintWriter out = response.getWriter();
+				response.setContentType("text/html; charset=utf-8");
+
+				out.print("<script>alert('投票成功！')</script>");
+				out.print("<script>location.href='" + idresultFile + "'</script>");
+				out.close();
+			}
+			else
+			{
+				resulttemp = FileUtils.readFile(defaultresultlateFile);
+				
+				File file = new File(defaultresultlateFile);
+				if (file.exists())
+				{
+					file.delete();
+				}
+
+				FileUtils.writeFile(defaultresultlateFile, resulttemp);
+
+				PrintWriter out = response.getWriter();
+				response.setContentType("text/html; charset=utf-8");
+
+				out.print("<script>alert('投票成功！')</script>");
+				out.print("<script>location.href='" + defaultresultlateFile + "'</script>");
+				out.close();
+			}
+		}
+		else
+		{
+			PrintWriter out = response.getWriter();
+			response.setContentType("text/html; charset=utf-8");
+
+			out.print("<script>location.href='" + strA + "'</script>");
+			out.close();
+		}
 	}
 
 	private int AddRes(Boolean istrue, int KeyId, int SubId, String Reuslt, int TestID, int SysID, int N_LogicPageId, int VoteID)
@@ -649,7 +695,7 @@ public class VwsurveyController extends DateBindController
 			mwVoteresult.setNVoteId(VoteID);
 			mwVoteresult.setDtDate(new Date());
 			mwVoteresult.setCIp(hostIP);
-			mwVoteresult.setIsTemp(0);//正式表，对应C#中的MwVoteresult。用字段来区分
+			mwVoteresult.setIsTemp(0);// 正式表，对应C#中的MwVoteresult。用字段来区分
 
 			commonService.saveTX(mwVoteresult);// 保存
 
@@ -669,7 +715,7 @@ public class VwsurveyController extends DateBindController
 			mwVoteresult.setNVoteId(VoteID);
 			mwVoteresult.setDtDate(new Date());
 			mwVoteresult.setCIp(hostIP);
-			mwVoteresult.setIsTemp(1);//临时表，对应C#中的MwVoteresultTemp。用字段来区分
+			mwVoteresult.setIsTemp(1);// 临时表，对应C#中的MwVoteresultTemp。用字段来区分
 
 			commonService.saveTX(mwVoteresult);// 保存
 
@@ -677,32 +723,5 @@ public class VwsurveyController extends DateBindController
 			i = Integer.valueOf(list.get(0).getId());
 		}
 		return i;
-	}
-
-	private void method_3(int id, int sysid)
-	{
-		MwVotecourse mwVotecourse = (MwVotecourse) commonService.get(String.valueOf(id), MwVotecourse.class);
-		String strA = mwVotecourse.getCReturnUrl();
-
-		String resulttemp = "";
-		String idresultFile = ExecuteContext.realPath() + "mw/onlinesurvey/result_" + id + ".htm";// 对应id的结果
-		String defaultresultlateFile = ExecuteContext.realPath() + "mw/onlinesurvey/result.htm";// 默认的结果
-		if (strA.isEmpty())
-		{
-			if (FileUtils.fileExists(idresultFile))
-			{
-				resulttemp = FileUtils.readFile(idresultFile);
-			}
-			else
-			{
-				resulttemp = FileUtils.readFile(defaultresultlateFile);
-			}
-			resulttemp = resulttemp.replace("{voteid}", String.valueOf(id));
-			// base.Response.Write(html);
-		}
-		else
-		{
-			// base.Response.Redirect(strA);
-		}
 	}
 }
