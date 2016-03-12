@@ -22,6 +22,8 @@ public class MwCoursecomment extends DtoSupport implements java.io.Serializable
 	private String reRemark;
 	private Date reTime;
 	private String reId;
+	
+	private String name;
 
 	public MwCoursecomment()
 	{
@@ -140,6 +142,14 @@ public class MwCoursecomment extends DtoSupport implements java.io.Serializable
 	public void setReId(String reId)
 	{
 		this.reId = reId;
+	}
+	
+	public String getName(){
+		return this.name;
+	}
+	
+	public void setName(String name){
+		this.name=name;
 	}
 
 }

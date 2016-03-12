@@ -206,6 +206,12 @@ public class PortalHTController {
 						.pageListQuery(hql.toString(), pageSize, (currentPage - 1)
 								* pageSize);
 				if (list != null && list.size() > 0) {
+					for (TechMdttNotes techMdttNotes : list) {
+						EcanUser user=(EcanUser)commonService.get(techMdttNotes.getOwnerID(), EcanUser.class);
+						if (user!=null) {
+							techMdttNotes.setName(user.getName());
+						}
+					}
 					resp.setData(list);
 					resp.setTotal(list.size() + "");
 					resplist.setList(resp);
@@ -298,8 +304,8 @@ public class PortalHTController {
 	public @ResponseBody RestResponseList GetGG(
 			Model model,
 			@RequestParam(value = "id") String id,
-			@RequestParam(value = "pageSize", required = false, defaultValue = "0") Integer pageSize,
-			@RequestParam(value = "currentPage", required = false, defaultValue = "1") Integer currentPage,
+			@RequestParam(value = "pageSize",required=false,defaultValue="0") Integer pageSize,
+			@RequestParam(value = "currentPage",required=false,defaultValue="1") Integer currentPage,
 			@RequestParam(value = "username") String username,
 			@RequestParam(value = "password") String password) {
 
@@ -437,6 +443,15 @@ public class PortalHTController {
 					List<MwCoursecomment> list = (List<MwCoursecomment>) commonService
 							.pageListQuery(hql.toString(), pageSize, (currentPage - 1)
 									* pageSize);
+					if (list!=null&&list.size()>0) {
+						for (MwCoursecomment mwCoursecomment : list) {
+							String userid=mwCoursecomment.getUid();
+							EcanUser user=(EcanUser)commonService.get(userid, EcanUser.class);
+							if (user!=null) {
+								mwCoursecomment.setName(user.getName());
+							}
+						}
+					}
 					resp.setData(list);
 					resp.setTotal(list.size() + "");
 					resplist.setList(resp);

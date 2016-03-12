@@ -13,6 +13,8 @@ public abstract class AbstractTechMdttNotes extends DtoSupport
 	private String content;
 	private String ownerID;
 	private Date createTime;
+	
+	private String name;
 
 	public String getId()
 	{
@@ -87,5 +89,13 @@ public abstract class AbstractTechMdttNotes extends DtoSupport
 	public void setCreateTime(Date createTime)
 	{
 		this.createTime = createTime;
+	}
+	
+	public String getName(){
+		return this.name;
+	}
+	
+	public void setName(String name){
+		this.name=name;
 	}
 }
