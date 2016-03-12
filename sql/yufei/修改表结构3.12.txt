@@ -1,0 +1,2 @@
+ALTER TABLE `mw_voteresult` 
+ADD COLUMN `IsTemp` INT NULL DEFAULT 0 COMMENT '标注是否调查结果是否开始' AFTER `C_Ip`;
