@@ -43,7 +43,9 @@ public class AuthHandlerInterceptor extends HandlerInterceptorAdapter
 				String funcCode = uris[3];
 
 				if (StringUtils.equals("iPadRest", appCode)
-						|| StringUtils.equals("rest", appCode) || StringUtils.equals("client", appCode))
+						|| StringUtils.equals("rest", appCode) || StringUtils.equals("client", appCode)
+						||StringUtils.equals("portalht", appCode)||StringUtils.equals("testdriverht",appCode)
+						||StringUtils.equals("retailknowhowht", appCode))
 				{// fix new rest service for iPad(Mobile Device Trainning tool) or dmp
 					return true;
 				}
