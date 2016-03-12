@@ -25,7 +25,7 @@
 	<div class="centerbody centerbox">
 		<div id="contentwrapper">
 			<div id="content_right">
-				<div class="tt">${i18n.appname.tag.title}</div>
+				<div class="tt">${i18n.appname.mw.homenew}</div>
 
 				<ec:table action="" method="get" items="list" var="var" view="ecan" width="99%" imagePath="${coreImgPath}/table/*.gif" showExports="false">
 					<ec:row>

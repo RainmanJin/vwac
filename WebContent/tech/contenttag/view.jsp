@@ -39,7 +39,7 @@
                 body.html('loading...');
                 body.load("selchildTag?id="+id);
             },
-            buttonText: { ok: '${i18n.button.add}', cancel: '${i18n.button.cancel}' },
+            buttonText: { ok: '${i18n.button.save}', cancel: '${i18n.button.cancel}' },
              okEvent: function(data, args) {
             	var ctagName=$("#ctagName").val();
             	var id = $("#id").val();
