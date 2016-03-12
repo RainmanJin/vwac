@@ -64,21 +64,19 @@ public class VwSurveyResultController
 	{
 		MwVotecourse mwVotecourse = (MwVotecourse) commonService.get(id, MwVotecourse.class);
 
-		// 原C#部分，statresulttmp和statresult的逻辑一样的，故这里不做判断
-		// if (mwVotecourse.getDtStartDate().after(new Date()))//
-		// 调查的时间开始时间在当前时间后，即调查未开始
-		// {
-		// return "redirect:/techc/vwsurveyresult/statresulttmp";// 转向另一个action
-		// }
-		// else
-		// {
-		// //下面的操作
-		//
-		// //return "tech/vwsurveyresult/statresult";// 转向页面
-		// }
-
-		model.addAttribute("userfullCount", getUsefullSurvey(id, NSysId));// 当前调查问卷有效样本数
-		model.addAttribute("SubDatalist", CreateTB(id, NSysId));// list数据
+		// 原C#部分，statresulttmp和statresult的是从不同的表取的，mw_voteresult、mw_voteresulttmp
+		// 这里合并成一张表，用字段IsTemp区分。IsTemp=0，原表mw_voteresult；IsTemp=1，临时表mw_voteresulttmp
+		// 如果开始时间比当前时间小，则从原表取数据，即before=true，IsTemp=0；否则，取临时表，IsTemp=1
+		if (mwVotecourse.getDtStartDate().before(new Date()))// IsTemp=0
+		{
+			model.addAttribute("userfullCount", getUsefullSurvey(id, NSysId, 0));// 当前调查问卷有效样本数
+			model.addAttribute("SubDatalist", CreateTB(id, NSysId, 0));// list数据
+		}
+		else
+		{
+			model.addAttribute("userfullCount", getUsefullSurvey(id, NSysId, 1));// 当前调查问卷有效样本数
+			model.addAttribute("SubDatalist", CreateTB(id, NSysId, 1));// list数据
+		}
 
 		return "tech/vwsurveyresult/statresult";// 转向页面
 	}
@@ -88,21 +86,19 @@ public class VwSurveyResultController
 	{
 		MwVotecourse mwVotecourse = (MwVotecourse) commonService.get(id, MwVotecourse.class);
 
-		// 原C#部分，statresulttmp和statresult的逻辑一样的，故这里不做判断
-		// if (mwVotecourse.getDtStartDate().after(new Date()))//
-		// 调查的时间开始时间在当前时间后，即调查未开始
-		// {
-		// return "redirect:/techc/vwsurveyresult/statresulttmp";// 转向另一个action
-		// }
-		// else
-		// {
-		// //下面的操作
-		//
-		// //return "tech/vwsurveyresult/statresult";// 转向页面
-		// }
-
-		model.addAttribute("userfullCount", getUsefullSurvey(id, NSysId));// 当前调查问卷有效样本数
-		model.addAttribute("SubDatalist", CreateTB(id, NSysId));// list数据
+		// 原C#部分，statresulttmp和statresult的是从不同的表取的，mw_voteresult、mw_voteresulttmp
+		// 这里合并成一张表，用字段IsTemp区分。IsTemp=0，原表mw_voteresult；IsTemp=1，临时表mw_voteresulttmp
+		// 如果开始时间比当前时间小，则从原表取数据，即before=true，IsTemp=0；否则，取临时表，IsTemp=1
+		if (mwVotecourse.getDtStartDate().before(new Date()))// IsTemp=0
+		{
+			model.addAttribute("userfullCount", getUsefullSurvey(id, NSysId, 0));// 当前调查问卷有效样本数
+			model.addAttribute("SubDatalist", CreateTB(id, NSysId, 0));// list数据
+		}
+		else
+		{
+			model.addAttribute("userfullCount", getUsefullSurvey(id, NSysId, 1));// 当前调查问卷有效样本数
+			model.addAttribute("SubDatalist", CreateTB(id, NSysId, 1));// list数据
+		}
 
 		return "tech/vwsurveyresult/statreport";// 转向页面
 	}
@@ -168,7 +164,7 @@ public class VwSurveyResultController
 	}
 
 	// 获取当前调查问卷有效样本数
-	private String getUsefullSurvey(final String id, final String NSysId)
+	private String getUsefullSurvey(final String id, final String NSysId, final Integer IsTemp)
 	{
 		// 当前调查问卷有效样本数
 		String userfullCount = (String) this.commonService.executeCallbackTX(new HibernateCallback<String>()
@@ -180,7 +176,8 @@ public class VwSurveyResultController
 				try
 				{
 					Connection conn = session.connection();
-					PreparedStatement pst = conn.prepareStatement("select count(1) FROM mw_voteresult where N_VoteId=" + Integer.valueOf(id) + " and N_KeyId=0 and C_Reuslt = '" + NSysId + "'");
+					PreparedStatement pst = conn.prepareStatement("select count(1) FROM mw_voteresult where N_VoteId=" + Integer.valueOf(id) + " and N_KeyId=0 and C_Reuslt = '" + NSysId
+							+ "' and IsTemp=" + IsTemp);
 					ResultSet rs = pst.executeQuery();
 					if (rs.next())
 					{
@@ -200,7 +197,7 @@ public class VwSurveyResultController
 	}
 
 	// 获取全部
-	private int getAllSurvey(final Integer id, final Integer SubId, final Integer NSysId)
+	private int getAllSurvey(final Integer id, final Integer SubId, final Integer NSysId, final Integer IsTemp)
 	{
 		// 当前调查问卷有效样本数
 		String userfullCount = (String) this.commonService.executeCallbackTX(new HibernateCallback<String>()
@@ -212,7 +209,8 @@ public class VwSurveyResultController
 				try
 				{
 					Connection conn = session.connection();
-					PreparedStatement pst = conn.prepareStatement("select count(1) FROM mw_voteresult where N_VoteId=" + id + " and N_SubId=" + SubId + " and N_SysId = " + NSysId);
+					PreparedStatement pst = conn.prepareStatement("select count(1) FROM mw_voteresult where N_VoteId=" + id + " and N_SubId=" + SubId + " and N_SysId = " + NSysId + " and IsTemp="
+							+ IsTemp);
 					ResultSet rs = pst.executeQuery();
 					if (rs.next())
 					{
@@ -231,7 +229,7 @@ public class VwSurveyResultController
 		return userfullCount == null ? 0 : Integer.valueOf(userfullCount);
 	}
 
-	private List<SubData> CreateTB(String id, String NSysId)
+	private List<SubData> CreateTB(String id, String NSysId, Integer IsTemp)
 	{
 		List lstsbDatas = new ArrayList();
 
@@ -260,7 +258,7 @@ public class VwSurveyResultController
 					for (SubjectUnit subjectUnit : subdata)
 					{
 						jj++;
-						lstsbDatas.addAll(GetTable(xh, jj, Integer.valueOf(id), subjectUnit));
+						lstsbDatas.addAll(GetTable(xh, jj, Integer.valueOf(id), subjectUnit, IsTemp));
 					}
 					xh++;
 				}
@@ -273,7 +271,7 @@ public class VwSurveyResultController
 			{
 				for (SubjectUnit subjectUnit : subdata2)
 				{
-					lstsbDatas.addAll(GetTable(xh, 0, Integer.valueOf(id), subjectUnit));
+					lstsbDatas.addAll(GetTable(xh, 0, Integer.valueOf(id), subjectUnit, IsTemp));
 					xh++;
 				}
 			}
@@ -282,7 +280,7 @@ public class VwSurveyResultController
 		return lstsbDatas;
 	}
 
-	private List<SubData> GetTable(int xh, int hh, int id, SubjectUnit subjectUnit)
+	private List<SubData> GetTable(int xh, int hh, int id, SubjectUnit subjectUnit, Integer IsTemp)
 	{
 		List lstsbs = new ArrayList();
 
@@ -295,7 +293,7 @@ public class VwSurveyResultController
 
 		lstsbs.add(sbdata);
 
-		int allSurvey = getAllSurvey(id, subjectUnit.getSubid(), subjectUnit.getN_SysId());// 总数
+		int allSurvey = getAllSurvey(id, subjectUnit.getSubid(), subjectUnit.getN_SysId(), IsTemp);// 总数
 
 		@SuppressWarnings("unchecked")
 		List<MwVotekey> list = commonService.list("from MwVotekey where NSubId=? order by NOrderId,id", subjectUnit.getN_SubId());
@@ -317,8 +315,8 @@ public class VwSurveyResultController
 					str2 = "<span class=\"splace2\">&nbsp;&nbsp;</span>" + mwVotekey.getCKeyTitle() + "<br/>";
 
 					@SuppressWarnings("unchecked")
-					List<MwVoteresult> mwVoteresults = commonService
-							.list("from MwVoteresult where NVoteId=? and NKeyId=? and NSubId=?", id, Integer.valueOf(mwVotekey.getId()), subjectUnit.getSubid());
+					List<MwVoteresult> mwVoteresults = commonService.list("from MwVoteresult where NVoteId=? and NKeyId=? and NSubId=? and IsTemp=?", id, Integer.valueOf(mwVotekey.getId()),
+							subjectUnit.getSubid(), IsTemp);
 
 					for (MwVoteresult mwVoteresult : mwVoteresults)
 					{
@@ -335,7 +333,7 @@ public class VwSurveyResultController
 				case 4:
 					// 票数
 					final String strSql = "select count(1) FROM mw_voteresult where N_VoteId=" + id + " and N_KeyId=" + Integer.valueOf(mwVotekey.getId()) + " and N_SubId = '"
-							+ subjectUnit.getSubid() + "'";
+							+ subjectUnit.getSubid() + "' and IsTemp=" + IsTemp;
 
 					String userfullNum = (String) this.commonService.executeCallbackTX(new HibernateCallback<String>()
 					{
@@ -442,20 +440,26 @@ public class VwSurveyResultController
 			HttpServletRequest request)
 	{
 		excelallreportSb = new StringBuffer();// 每次都创建，避免上次的数据未释放，导致导出的数据重复
+		MwVotecourse mwVotecourse = (MwVotecourse) commonService.get(id, MwVotecourse.class);
 
-		// 生成excel数据，html格式
-		String tableExcelString = tableOne(id, NSysId);
+		if (mwVotecourse.getDtStartDate().before(new Date()))// IsTemp=0
+		{
+			model.addAttribute("dataString", tableOne(id, NSysId, 0));// 生成excel数据，html格式
+		}
+		else
+		// IsTemp=1
+		{
+			model.addAttribute("dataString", tableOne(id, NSysId, 1));// 生成excel数据，html格式
+		}
+
 		String fileName = "vwac_survey_" + id + "_" + excelallreportStartDate + "_" + excelallreportCode + ".xls";// 文件名称
-
-		model.addAttribute("dataString", tableExcelString);
-
 		HttpSession session = request.getSession();// 将文件名存储到session中
 		session.setAttribute("fileName", fileName);
 
 		return "tech/vwsurveyresult/excelallreport";
 	}
 
-	private String tableOne(final String id, final String NSysId)
+	private String tableOne(final String id, final String NSysId, final Integer IsTemp)
 	{
 		final List listVotekey = new ArrayList();
 
@@ -501,7 +505,7 @@ public class VwSurveyResultController
 			columns = columns < 8 ? 8 : columns;// 总列数小于8 默认8列
 			int xh = 1;
 
-			int yl = Integer.valueOf(getUsefullSurvey(id, NSysId));// 当前调查问卷有效样本数
+			int yl = Integer.valueOf(getUsefullSurvey(id, NSysId, IsTemp));// 当前调查问卷有效样本数
 
 			MwVotecourse mwVotecourse = (MwVotecourse) commonService.get(id, MwVotecourse.class);
 			excelallreportCode = mwVotecourse.getCCode();
@@ -583,7 +587,11 @@ public class VwSurveyResultController
 								Connection conn = session.connection();
 								PreparedStatement pst = conn
 										.prepareStatement("SELECT SUM(k.N_Score) score  FROM mw_voteresult AS r  INNER JOIN mw_votesubject AS s ON r.N_SubId = s.N_SubId  INNER JOIN mw_votekey AS k ON r.N_KeyId = k.N_KeyId   where r.N_VoteId='"
-												+ id + "' and s.N_SubId in( select  n_subid FROM mw_votesubject  where  instr(colpath,'," + mwVotesubject.getId() + ",')>0 union select 0)");
+												+ id
+												+ "' and s.N_SubId in( select  n_subid FROM mw_votesubject  where  instr(colpath,',"
+												+ mwVotesubject.getId()
+												+ ",')>0"
+												+ " union select 0)  and r.IsTemp=" + IsTemp);
 								ResultSet rs = pst.executeQuery();
 								if (rs.next())
 								{
@@ -645,7 +653,7 @@ public class VwSurveyResultController
 					for (SubjectUnit subjectUnit : subdata)
 					{
 						jj++;
-						dataOne(xh, jj, yl, Integer.valueOf(id), subjectUnit, listVotekey);
+						dataOne(xh, jj, yl, Integer.valueOf(id), subjectUnit, listVotekey, IsTemp);
 					}
 					xh++;
 				}
@@ -669,7 +677,7 @@ public class VwSurveyResultController
 		}
 	}
 
-	private void dataOne(int xh, int hh, int yb, final int id, final SubjectUnit subjectUnit, List listVotekey)
+	private void dataOne(int xh, int hh, int yb, final int id, final SubjectUnit subjectUnit, List listVotekey, final Integer IsTemp)
 	{
 		int i = 0;
 		excelallreportSb.append("<tr><td {rowspan} align=\"center\" style=\"border:thin solid #333333;\">" + xh + ((hh > 0) ? "." + hh : "") + " </td>");
@@ -688,7 +696,8 @@ public class VwSurveyResultController
 			case 1:
 			case 5:
 				@SuppressWarnings("unchecked")
-				List<MwVoteresult> mwVoteresults = commonService.list("from MwVoteresult where NVoteId=? and NKeyId=? and NSubId=?", id, Integer.valueOf(mwVotekey.getId()), subjectUnit.getSubid());
+				List<MwVoteresult> mwVoteresults = commonService.list("from MwVoteresult where NVoteId=? and NKeyId=? and NSubId=? and IsTemp=?", id, Integer.valueOf(mwVotekey.getId()),
+						subjectUnit.getSubid(), IsTemp);
 
 				if (mwVoteresults.size() > 0)
 				{
@@ -730,7 +739,7 @@ public class VwSurveyResultController
 								Connection conn = session.connection();
 								PreparedStatement pst = conn
 										.prepareStatement("SELECT SUM(k.N_Score) score FROM mw_voteresult AS r INNER JOIN mw_votesubject AS s ON r.N_SubId = s.N_SubId INNER JOIN mw_votekey AS k ON r.N_KeyId = k.N_KeyId where  r.N_VoteId='"
-												+ id + "' and s.N_SubId =" + subjectUnit.getSubid());
+												+ id + "' and s.N_SubId =" + subjectUnit.getSubid() + " and r.IsTemp=" + IsTemp);
 								ResultSet rs = pst.executeQuery();
 								if (rs.next())
 								{
@@ -753,7 +762,7 @@ public class VwSurveyResultController
 
 				}
 				final String strSql = "select count(1) FROM mw_voteresult where N_VoteId=" + id + " and N_KeyId=" + Integer.valueOf(mwVotekey.getId()) + " and N_SubId = '" + subjectUnit.getSubid()
-						+ "'";
+						+ "' and IsTemp=" + IsTemp;
 
 				String userfullNum = (String) this.commonService.executeCallbackTX(new HibernateCallback<String>()
 				{
@@ -795,7 +804,7 @@ public class VwSurveyResultController
 				else
 				{
 					final String strSql2 = "select count(1) FROM mw_voteresult where N_VoteId=" + id + " and N_KeyId=" + Integer.valueOf(mwVotekey.getId()) + " and N_SubId = '"
-							+ subjectUnit.getSubid() + "'";
+							+ subjectUnit.getSubid() + "' and IsTemp=" + IsTemp;
 
 					String userfullNum2 = (String) this.commonService.executeCallbackTX(new HibernateCallback<String>()
 					{
@@ -857,19 +866,25 @@ public class VwSurveyResultController
 	{
 		excelallreportSbsingle = new StringBuffer();// 每次都创建，避免上次的数据未释放，导致导出的数据重复
 
-		// 生成excel数据，html格式
-		String tableExcelString = tableOneSingle(id, NSysId);
+		MwVotecourse mwVotecourse = (MwVotecourse) commonService.get(id, MwVotecourse.class);
+		if (mwVotecourse.getDtStartDate().before(new Date()))// IsTemp=0
+		{
+			model.addAttribute("tableExcelString", tableOneSingle(id, NSysId, 0));// 生成excel数据，html格式
+		}
+		else
+		// IsTemp=1
+		{
+			model.addAttribute("tableExcelString", tableOneSingle(id, NSysId, 1));// 生成excel数据，html格式
+		}
+
 		String fileName = "vwac_survey_detail_" + id + "_" + excelallreportStartDatesingle + "_" + excelallreportCodesingle + ".xls";// 文件名称
-
-		model.addAttribute("tableExcelString", tableExcelString);
-
 		HttpSession session = request.getSession();// 将文件名存储到session中
 		session.setAttribute("fileName", fileName);
 
 		return "tech/vwsurveyresult/excelsinglereport";
 	}
 
-	private String tableOneSingle(final String id, final String NSysId)
+	private String tableOneSingle(final String id, final String NSysId, Integer IsTemp)
 	{
 		final List listVotekey = new ArrayList();
 
@@ -913,7 +928,7 @@ public class VwSurveyResultController
 		int columns = 3 + listVotekey.size(); // 总列数
 		columns = columns < 8 ? 8 : columns;// 总列数小于8 默认8列
 
-		int yl = Integer.valueOf(getUsefullSurvey(id, NSysId));// 当前调查问卷有效样本数
+		int yl = Integer.valueOf(getUsefullSurvey(id, NSysId, IsTemp));// 当前调查问卷有效样本数
 
 		MwVotecourse mwVotecourse = (MwVotecourse) commonService.get(id, MwVotecourse.class);
 		excelallreportCodesingle = mwVotecourse.getCCode();
@@ -970,7 +985,7 @@ public class VwSurveyResultController
 
 		// 找到所有参与投票的人
 		@SuppressWarnings("unchecked")
-		List<MwVoteresult> dtresult = commonService.list("from MwVoteresult where NVoteId=? and NSysId=?", Integer.valueOf(id), Integer.valueOf(NSysId));
+		List<MwVoteresult> dtresult = commonService.list("from MwVoteresult where NVoteId=? and NSysId=? and IsTemp=?", Integer.valueOf(id), Integer.valueOf(NSysId), IsTemp);
 
 		// 获取单个人节点集合
 		List<MwVoteresult> resultrows = new ArrayList();

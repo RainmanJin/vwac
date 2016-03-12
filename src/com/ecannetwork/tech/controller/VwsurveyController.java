@@ -649,6 +649,7 @@ public class VwsurveyController extends DateBindController
 			mwVoteresult.setNVoteId(VoteID);
 			mwVoteresult.setDtDate(new Date());
 			mwVoteresult.setCIp(hostIP);
+			mwVoteresult.setIsTemp(0);//正式表，对应C#中的MwVoteresult。用字段来区分
 
 			commonService.saveTX(mwVoteresult);// 保存
 
@@ -657,9 +658,23 @@ public class VwsurveyController extends DateBindController
 		}
 		else
 		{
-			// mw_voteresulttmp表
-			// i = B_VoteresultTmp.AddRes(KeyId, SubId, Reuslt, TestID, SysID,
-			// N_LogicPageId, VoteID);
+			MwVoteresult mwVoteresult = new MwVoteresult();
+
+			mwVoteresult.setNKeyId(KeyId);
+			mwVoteresult.setNSubId(SubId);
+			mwVoteresult.setCReuslt(Reuslt);
+			mwVoteresult.setNTestId(TestID);
+			mwVoteresult.setNSysId(SysID);
+			mwVoteresult.setNLogicPageId(N_LogicPageId);
+			mwVoteresult.setNVoteId(VoteID);
+			mwVoteresult.setDtDate(new Date());
+			mwVoteresult.setCIp(hostIP);
+			mwVoteresult.setIsTemp(1);//临时表，对应C#中的MwVoteresultTemp。用字段来区分
+
+			commonService.saveTX(mwVoteresult);// 保存
+
+			List<MwVoteresult> list = commonService.list("from MwVoteresult Order By id Desc limit 1");
+			i = Integer.valueOf(list.get(0).getId());
 		}
 		return i;
 	}

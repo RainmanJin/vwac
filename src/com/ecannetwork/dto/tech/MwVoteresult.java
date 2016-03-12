@@ -23,6 +23,7 @@ public class MwVoteresult extends DtoSupport implements java.io.Serializable
 	private Integer NLogicPageId;
 	private String CLic;
 	private String CIp;
+	private Integer IsTemp;
 
 	public MwVoteresult()
 	{
@@ -154,4 +155,14 @@ public class MwVoteresult extends DtoSupport implements java.io.Serializable
 		this.CIp = CIp;
 	}
 
+	public Integer getIsTemp()
+	{
+		return IsTemp;
+	}
+
+	public void setIsTemp(Integer isTemp)
+	{
+		IsTemp = isTemp;
+	}
+	
 }
