@@ -321,7 +321,7 @@ public class B8Controller {
                   ss1 /= dtcon3.size();// ss1是score的平均值
                   lst.add(cartypeset(dtcon3.get(0).getCarType()) + ","
                       + Bigitenset(dtcon3.get(0).getBigItem()) + ","
-                      + itenset(dtcon3.get(0).getItem()) + "," + ss1);
+                      + itenset(dtcon3.get(0).getBigItem(), dtcon3.get(0).getItem()) + "," + ss1);
                 }
               }
             }
@@ -490,18 +490,51 @@ public class B8Controller {
     }
   }
   
-  protected String itenset(String set) {
-    if ("1".equals(set)) {
-      return "第一项";
+  protected String itenset(String set0, String set) {
+    if ("001".equals(set0)) {
+      if ("1".equals(set)) {
+        return "座椅舒适度";
+      }
+      else if ("2".equals(set)) {
+        return "驾驶视野";
+      }
+      else if ("3".equals(set)) {
+        return "品质";
+      }
+      else {
+        return "日常可用性";
+      }
     }
-    else if ("2".equals(set)) {
-      return "第二项";
+    else if ("002".equals(set0)) {
+      if ("1".equals(set)) {
+        return "空间感";
+      }
+      else if ("2".equals(set)) {
+        return "日常可用性";
+      }
+      else if ("3".equals(set)) {
+        return "座椅可变性";
+      }
+      else {
+        return "品质";
+      }
     }
-    else if ("3".equals(set)) {
-      return "第三项";
+    else if ("003".equals(set0)) {
+      if ("1".equals(set)) {
+        return "后备箱尺寸";
+      }
+      else if ("2".equals(set)) {
+        return "机架拉升度";
+      }
+      else if ("3".equals(set)) {
+        return "焊接工艺";
+      }
+      else {
+        return "品质";
+      }
     }
     else {
-      return "第四项";
+      return "";
     }
   }
   
