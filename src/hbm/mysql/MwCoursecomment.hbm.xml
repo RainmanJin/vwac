@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 23, 2016 11:15:36 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.ecannetwork.dto.tech.MwCoursecomment" table="mw_coursecomment">
+        <id name="id" type="java.lang.String">
+            <column name="Id" />
+            <generator class="identity" />
+        </id>
+        <property name="uid" type="string">
+            <column name="Uid" length="32" />
+        </property>
+        <property name="cid" type="string">
+            <column name="Cid" length="32" />
+        </property>
+        <property name="ccid" type="java.lang.Integer">
+            <column name="CCid" />
+        </property>
+        <property name="title" type="string">
+            <column name="Title" length="150" />
+        </property>
+        <property name="remark" type="string">
+            <column name="Remark" />
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="CreateTime" length="0" />
+        </property>
+        <property name="reRemark" type="string">
+            <column name="ReRemark" />
+        </property>
+        <property name="reTime" type="timestamp">
+            <column name="ReTime" length="0" />
+        </property>
+        <property name="reId" type="string">
+            <column name="ReId" length="32" />
+        </property>
+    </class>
+</hibernate-mapping>
