@@ -68,17 +68,17 @@
 		initJsonForm("#imgForm",function(d){
 			location.reload();
 		},function(d){
-			alert(d.data)
+			alert(d.data);
 		});
 		initJsonForm("#imgOForm",function(d){
 			location.reload();
 		},function(d){
-			alert(d.data)
+			alert(d.data);
 		});
 		initJsonForm("#imgTForm",function(d){
 			location.reload();
 		},function(d){
-			alert(d.data)
+			alert(d.data);
 		});
 	});
 	</script>

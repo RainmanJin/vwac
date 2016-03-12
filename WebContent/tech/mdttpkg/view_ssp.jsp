@@ -112,9 +112,9 @@
 
 								<li><label>${i18n.domains.osType}</label> <d:selectDomain domain="osType" name="osType" value="${dto.osType}" /> <em>*</em></li>
 								<li><label>${i18n.mdttpkg.learntype}</label> <select name="conentType" style="width: 150px;">
-                                    <option value="1">自学材料</option>
-                                    <option value="2">课堂学习</option>
-                                    </select></li>
+										<option value="1">自学材料</option>
+										<option value="2">课堂学习</option>
+								</select></li>
 
 								<c:if test="${dto.lastUpdateTime!=null}">
 									<li><label>Last Update</label> <input type="text" value="<ecan:dateFormart value="${dto.lastUpdateTime}" formart="yyyy-MM-dd HH:mm:ss" />" readonly="readonly" class="gray" /></li>
