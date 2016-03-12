@@ -38,46 +38,47 @@
 			alert(d.data);
 		});
 
-		$("#motorcycle").focus(function() {
-			$.fn.jmodal({
-				title : '${i18n.oper.select}',
-				width : 460,
-				height : 300,
-				content : function(body) {
-					body.html('loading...');
-					//body.load("listtag?id=${dto.id}");
-					body.load("listtag");//id值没有使用
-				},
-				buttonText : {
-					ok : '${i18n.button.add}',
-					cancel : '${i18n.button.cancel}'
-				},
-				okEvent : function(data, args) {
-					var selVal = [];
-					var rightSel = $("#selectR");
-					rightSel.find("option").each(function() {
-						selVal.push(this.value);
-					});
-					selVals = selVal.join(",");
-					if (selVals == "") {
-						alert("没有选择任何项！");
-					} else {
-						$("#motorcycle").val(selVals);
-						args.hide();
-						/*ajaxPost("chgtags", {
-							"id" : "${dto.id}",
-							"tagid" : selVals
-						}, function(r) {
-							if (r.success) {
-								location.reload();
-							} else {
-								alert(r.data);
-							}
-						}, "json");*/
-					}
-				}
+	});
 
-			});
+	$("#motorcycle").focus(function() {
+		$.fn.jmodal({
+			title : '${i18n.oper.select}',
+			width : 460,
+			height : 300,
+			content : function(body) {
+				body.html('loading...');
+				//body.load("listtag?id=${dto.id}");
+				body.load("listtag");//id值没有使用
+			},
+			buttonText : {
+				ok : '${i18n.button.add}',
+				cancel : '${i18n.button.cancel}'
+			},
+			okEvent : function(data, args) {
+				var selVal = [];
+				var rightSel = $("#selectR");
+				rightSel.find("option").each(function() {
+					selVal.push(this.value);
+				});
+				selVals = selVal.join(",");
+				if (selVals == "") {
+					alert("没有选择任何项！");
+				} else {
+					$("#motorcycle").val(selVals);
+					args.hide();
+					/*ajaxPost("chgtags", {
+						"id" : "${dto.id}",
+						"tagid" : selVals
+					}, function(r) {
+						if (r.success) {
+							location.reload();
+						} else {
+							alert(r.data);
+						}
+					}, "json");*/
+				}
+			}
+
 		});
 	});
 </script>
@@ -161,26 +162,30 @@
 					<div class="tt">Preview</div>
 					<form id="imgForm" action="img" method="post" class="form" enctype="multipart/form-data">
 						<input type="hidden" name="pkgID" value="${dto.id}" />
-						<li style="height: 136px;"><label>iPad Preview Image(324x232)</label> <input type="file" name="img" onchange="$('#imgForm').submit();" />
-							<div style="display: block;">
-								<img src="${ctxPath}${dto.iconURL}" width="162" height="116" style="display: block;" />
-							</div></li>
+						<ul>
+							<li style="height: 136px;"><label>iPad Preview Image(324x232)</label> <input type="file" name="img" onchange="$('#imgForm').submit();" />
+								<div style="display: block;">
+									<img src="${ctxPath}${dto.iconURL}" width="162" height="116" style="display: block;" />
+								</div></li>
+						</ul>
 					</form>
 					<form id="imgOForm" action="oimg" method="post" class="form" enctype="multipart/form-data">
 						<input type="hidden" name="pkgID" value="${dto.id}" />
-
-						<li style="height: 136px;"><label>Mobile Preview small Image(490x270)</label> <input type="file" name="oimg" onchange="$('#imgOForm').submit();" />
-							<div style="display: block;">
-								<img src="${ctxPath}${dto.icon1URL}" width="162" height="116" style="display: block;" />
-							</div></li>
+						<ul>
+							<li style="height: 136px;"><label>Mobile Preview small Image(490x270)</label> <input type="file" name="oimg" onchange="$('#imgOForm').submit();" />
+								<div style="display: block;">
+									<img src="${ctxPath}${dto.icon1URL}" width="162" height="116" style="display: block;" />
+								</div></li>
+						</ul>
 					</form>
 					<form id="imgTForm" action="timg" method="post" class="form" enctype="multipart/form-data">
 						<input type="hidden" name="pkgID" value="${dto.id}" />
-
-						<li style="height: 136px;"><label>Mobile Preview Image(1080x630)</label> <input type="file" name="timg" onchange="$('#imgTForm').submit();" />
-							<div style="display: block;">
-								<img src="${ctxPath}${dto.icon2URL}" width="162" height="116" style="display: block;" />
-							</div></li>
+						<ul>
+							<li style="height: 136px;"><label>Mobile Preview Image(1080x630)</label> <input type="file" name="timg" onchange="$('#imgTForm').submit();" />
+								<div style="display: block;">
+									<img src="${ctxPath}${dto.icon2URL}" width="162" height="116" style="display: block;" />
+								</div></li>
+						</ul>
 					</form>
 				</c:if>
 				<div class="btns" style="padding-left: 160px;">
