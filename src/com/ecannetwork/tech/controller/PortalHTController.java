@@ -170,7 +170,7 @@ public class PortalHTController {
 					if (!file.exists()) {
 						AjaxResponse response = null;
 						response = FileUploadHelper.upload(request, storeFileNameWithPath,
-								"filePath", Configs.getAsList("courseAttachementFileType"), true);
+								"pkgimg", Configs.getAsList("courseAttachementFileType"), true);
 						String filePathString=File.separator+"uploads" + File.separator
 								+ "ipadnotes" + File.separator + fileName.split("\\.")[0] + "."
 								+ fileName.split("\\.")[1].toLowerCase();
