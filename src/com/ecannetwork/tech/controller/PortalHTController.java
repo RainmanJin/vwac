@@ -1,5 +1,6 @@
 ﻿package com.ecannetwork.tech.controller;
 
+import java.io.File;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -17,13 +18,18 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.ecannetwork.core.app.auth.AuthFacade;
 import com.ecannetwork.core.app.user.service.UserService;
+import com.ecannetwork.core.module.controller.AjaxResponse;
 import com.ecannetwork.core.module.db.dao.CommonDAO;
 import com.ecannetwork.core.module.service.CommonService;
 import com.ecannetwork.core.util.AESEXT;
 import com.ecannetwork.core.util.Configs;
+import com.ecannetwork.core.util.CoreConsts;
+import com.ecannetwork.core.util.FileUploadHelper;
 import com.ecannetwork.core.util.MD5;
 import com.ecannetwork.dto.core.EcanDomainvalueDTO;
 import com.ecannetwork.dto.core.EcanI18NPropertiesDTO;
@@ -105,7 +111,8 @@ public class PortalHTController {
 			@RequestParam(value = "content") String content,
 			@RequestParam(value = "ownerid") String ownerid,
 			@RequestParam(value = "username") String username,
-			@RequestParam(value = "password") String password) {
+			@RequestParam(value = "password") String password,
+			MultipartHttpServletRequest request) {
 
 		try {
 			RestResponse resp = this.validateUser(username, password);
@@ -128,8 +135,6 @@ public class PortalHTController {
 					ownerID = ownerid;
 				}
 
-				// 上传图片
-
 				TechMdttNotes notesModel = new TechMdttNotes();
 				notesModel.setPkgID(pkgID);
 				notesModel.setMenuID(menuID);
@@ -137,7 +142,43 @@ public class PortalHTController {
 				notesModel.setContent(conTent);
 				notesModel.setOwnerID(ownerID);
 				notesModel.setCreateTime(new Date());
-
+				
+				MultipartHttpServletRequest multipartHttpServletRequest = (MultipartHttpServletRequest) request;
+				MultipartFile multipartFile = multipartHttpServletRequest
+						.getFile("pkgimg");
+				String fileName = multipartFile.getOriginalFilename();
+				if (fileName!=null&&!fileName.equals("")) {
+					String storeFileNameWithPath = CoreConsts.Runtime.APP_ABSOLUTE_PATH+File.separator+"uploads" + File.separator + "ipadnotes"
+							+ File.separator + fileName.split("\\.")[0];
+					//判断路径
+					File dirFile = new File(CoreConsts.Runtime.APP_ABSOLUTE_PATH+File.separator+"uploads");
+					if (!dirFile.exists()) {
+						dirFile.mkdir();
+						dirFile=new File(CoreConsts.Runtime.APP_ABSOLUTE_PATH
+							+ File.separator +"uploads"+File.separator+"ipadnotes");
+						dirFile.mkdir();
+					}else {
+						dirFile=new File(CoreConsts.Runtime.APP_ABSOLUTE_PATH
+								+ File.separator +"uploads"+File.separator+"ipadnotes");
+						if (!dirFile.exists()) {
+							dirFile.mkdir();
+						}				
+					}
+					//上传文件
+					File file = new File(storeFileNameWithPath + "."
+							+ fileName.split("\\.")[1]);
+					if (!file.exists()) {
+						AjaxResponse response = null;
+						response = FileUploadHelper.upload(request, storeFileNameWithPath,
+								"filePath", Configs.getAsList("courseAttachementFileType"), true);
+						String filePathString=File.separator+"uploads" + File.separator
+								+ "ipadnotes" + File.separator + fileName.split("\\.")[0] + "."
+								+ fileName.split("\\.")[1].toLowerCase();
+						String apath = filePathString.replace('\\', '/');
+						notesModel.setPkgimg(apath);
+					}
+				}
+				
 				commonService.saveOrUpdateTX(notesModel);
 				return resp;
 
