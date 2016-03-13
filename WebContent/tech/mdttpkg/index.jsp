@@ -16,7 +16,7 @@
 		};
 		function chgVersion(id){
 			$.fn.jmodal({
-		        title: '${i18n.resourse.delete}',
+		        title: '${i18n.oper.edit}',
 		        width:800,
 		        content: function(body) {
 		            body.html('loading...');
