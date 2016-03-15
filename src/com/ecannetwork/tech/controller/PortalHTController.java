@@ -1,6 +1,8 @@
 ﻿package com.ecannetwork.tech.controller;
 
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -9,6 +11,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.lang.StringUtils;
@@ -112,7 +115,7 @@ public class PortalHTController {
 			@RequestParam(value = "ownerid") String ownerid,
 			@RequestParam(value = "username") String username,
 			@RequestParam(value = "password") String password,
-			MultipartHttpServletRequest request) {
+			@RequestParam(required = false)MultipartHttpServletRequest request) {
 
 		try {
 			RestResponse resp = this.validateUser(username, password);
@@ -143,41 +146,63 @@ public class PortalHTController {
 				notesModel.setOwnerID(ownerID);
 				notesModel.setCreateTime(new Date());
 				
-				MultipartHttpServletRequest multipartHttpServletRequest = (MultipartHttpServletRequest) request;
-				MultipartFile multipartFile = multipartHttpServletRequest
-						.getFile("pkgimg");
-				String fileName = multipartFile.getOriginalFilename();
-				if (fileName!=null&&!fileName.equals("")) {
-					String storeFileNameWithPath = CoreConsts.Runtime.APP_ABSOLUTE_PATH+File.separator+"uploads" + File.separator + "ipadnotes"
-							+ File.separator + fileName.split("\\.")[0];
-					//判断路径
-					File dirFile = new File(CoreConsts.Runtime.APP_ABSOLUTE_PATH+File.separator+"uploads");
-					if (!dirFile.exists()) {
-						dirFile.mkdir();
-						dirFile=new File(CoreConsts.Runtime.APP_ABSOLUTE_PATH
-							+ File.separator +"uploads"+File.separator+"ipadnotes");
-						dirFile.mkdir();
-					}else {
-						dirFile=new File(CoreConsts.Runtime.APP_ABSOLUTE_PATH
-								+ File.separator +"uploads"+File.separator+"ipadnotes");
+				if(request != null)
+				{
+					MultipartHttpServletRequest multipartHttpServletRequest = (MultipartHttpServletRequest) request;
+					MultipartFile multipartFile = multipartHttpServletRequest.getFile("pkgimg");
+
+					String fileName = multipartFile.getOriginalFilename();
+					if (fileName!=null&&!fileName.equals("")) {
+						String storeFileNameWithPath = CoreConsts.Runtime.APP_ABSOLUTE_PATH+File.separator+"uploads" + File.separator + "ipadnotes"
+								+ File.separator + fileName.split("\\.")[0];
+						//判断路径
+						File dirFile = new File(CoreConsts.Runtime.APP_ABSOLUTE_PATH+File.separator+"uploads");
 						if (!dirFile.exists()) {
 							dirFile.mkdir();
-						}				
-					}
-					//上传文件
-					File file = new File(storeFileNameWithPath + "."
-							+ fileName.split("\\.")[1]);
-					if (!file.exists()) {
-						AjaxResponse response = null;
-						response = FileUploadHelper.upload(request, storeFileNameWithPath,
-								"pkgimg", Configs.getAsList("courseAttachementFileType"), true);
+							dirFile=new File(CoreConsts.Runtime.APP_ABSOLUTE_PATH
+								+ File.separator +"uploads"+File.separator+"ipadnotes");
+							dirFile.mkdir();
+						}else {
+							dirFile=new File(CoreConsts.Runtime.APP_ABSOLUTE_PATH
+									+ File.separator +"uploads"+File.separator+"ipadnotes");
+							if (!dirFile.exists()) {
+								dirFile.mkdir();
+							}				
+						}
+						
+						File file=new File(storeFileNameWithPath + "." + fileName.split("\\.")[1]);
+						FileOutputStream fos=new FileOutputStream(file);
+						InputStream is=multipartFile.getInputStream();
+						 byte[] buffer = new byte[8192];
+						 int bytesRead = 0;
+						 while ((bytesRead = is.read(buffer, 0, 8192)) != -1) {
+							 fos.write(buffer, 0, bytesRead);
+						 }
+						 fos.close();
+					    is.close();
+					    
 						String filePathString=File.separator+"uploads" + File.separator
-								+ "ipadnotes" + File.separator + fileName.split("\\.")[0] + "."
-								+ fileName.split("\\.")[1].toLowerCase();
-						String apath = filePathString.replace('\\', '/');
+						+ "ipadnotes" + File.separator + fileName.split("\\.")[0] + "."
+						+ fileName.split("\\.")[1].toLowerCase();
+					    String apath = filePathString.replace('\\', '/');
 						notesModel.setPkgimg(apath);
+						//上传文件
+//						File file = new File(storeFileNameWithPath + "."
+//								+ fileName.split("\\.")[1]);
+//						if (!file.exists()) {
+//							AjaxResponse response = null;
+//							response = FileUploadHelper.upload(request, storeFileNameWithPath,
+//									"filePath", Configs.getAsList("courseAttachementFileType"), true);
+//							String filePathString=File.separator+"uploads" + File.separator
+//									+ "ipadnotes" + File.separator + fileName.split("\\.")[0] + "."
+//									+ fileName.split("\\.")[1].toLowerCase();
+//							String apath = filePathString.replace('\\', '/');
+//							notesModel.setPkgimg(apath);
+//						}
+
 					}
 				}
+				
 				
 				commonService.saveOrUpdateTX(notesModel);
 				return resp;
